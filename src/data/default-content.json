@@ -1,0 +1,35 @@
+{
+  "siteSettings": {
+    "linkedinUrl": "https://www.linkedin.com/company/dmgblockchain/posts/?feedView=all",
+    "xUrl": "https://x.com/dmgblockchain",
+    "terraPoolUrl": "https://terrapool.io",
+    "reactorUrl": "https://reactor.xyz",
+    "numisUrl": "https://numis-trust.com"
+  },
+  "about": {
+    "eyebrow": "About DMG",
+    "title": "One company. Two connected engines of growth.",
+    "intro": "DMG segments itself into two business lines under the Core data center infrastructure and Core+ software and services strategies, unified through its vertical integration.",
+    "coreTitle": "Data Center Infrastructure",
+    "coreDescription": "Our Core strategy drives revenue from Bitcoin mining, AI compute and colocation services.",
+    "corePlusTitle": "Software and Services",
+    "corePlusDescription": "Our Core+ strategy drives revenue from DMG’s carbon-neutral Bitcoin ecosystem, digital-asset custody services, Terra Pool and other Blockseer-enabled products and services.",
+    "milestonesTitle": "DMG milestones"
+  },
+  "contact": {
+    "title": "Let’s build what comes next.",
+    "intro": "Connect with DMG Blockchain Solutions for company, investor, infrastructure and privacy inquiries.",
+    "companyName": "DMG Blockchain Solutions Inc.",
+    "address": "PO Box 522\nChristina Lake, BC V0H 1E0\nCanada",
+    "generalEmail": "info@dmgblockchain.com",
+    "privacyEmail": "compliance@dmgblockchain.com",
+    "consentText": "By providing your email address, you consent to receive press releases, presentations and other information concerning DMG. You may withdraw your consent at any time using the unsubscribe feature."
+  },
+  "presentation": {
+    "title": "DMG Corporate Deck — May 2026",
+    "description": "DMG Blockchain Solutions Inc. is listed on the TSX Venture Exchange (TSXV: DMGI), the OTCQB (DMGGF) and the Frankfurt Exchange (6AX.F).",
+    "publishedAt": "2026-05-01",
+    "embedUrl": "https://heyzine.com/flip-book/6b32e46228.html",
+    "pdfUrl": "https://drive.google.com/file/d/1eLZ8Z5tAhWogXnSyEjQfGu5R_ClGNdG9/view?usp=sharing"
+  }
+}

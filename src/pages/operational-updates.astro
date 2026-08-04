@@ -1,0 +1,18 @@
+---
+import InvestorSubnav from '../components/InvestorSubnav.astro';
+import PageHero from '../components/PageHero.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { getInvestorUpdates } from '../lib/sanity';
+
+export const prerender = true;
+const updates = await getInvestorUpdates('operational');
+const formatDate = (date?: string) => date ? new Intl.DateTimeFormat('en-CA', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(date)) : '';
+---
+
+<SiteLayout title="Operational Updates | DMG Blockchain Solutions" description="DMG operating results and infrastructure progress." canonicalPath="/operational-updates" current="investors">
+  <PageHero eyebrow="Investor Centre" title="Operational updates." description="Monthly production, site progress and operating announcements from DMG." />
+  <InvestorSubnav />
+  <section class="updates-section"><div class="shell update-grid">
+    {updates.map((update) => <article class="update-card"><p class="eyebrow">{formatDate(update.date)}</p><h2>{update.title}</h2>{update.summary && <p>{update.summary}</p>}<a href={update.internalPath || update.url || '/insights'}>Read update →</a></article>)}
+  </div></section>
+</SiteLayout>

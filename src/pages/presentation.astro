@@ -1,0 +1,21 @@
+---
+import InvestorSubnav from '../components/InvestorSubnav.astro';
+import PageHero from '../components/PageHero.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { downloadUrl, getPresentation, presentationEmbedUrl } from '../lib/sanity';
+
+export const prerender = true;
+const presentation = await getPresentation();
+const embedUrl = presentationEmbedUrl(presentation);
+---
+
+<SiteLayout title="Investor Presentation | DMG Blockchain Solutions" description={presentation.description} canonicalPath="/presentation" current="investors">
+  <PageHero eyebrow="Investor Centre" title={presentation.title} description={presentation.description} />
+  <InvestorSubnav />
+  <section class="presentation-section">
+    <div class="shell">
+      <div class="presentation-toolbar"><div><p class="eyebrow">Current corporate deck</p><h2>View the presentation.</h2></div><a class="blueprint-button" href={downloadUrl(presentation.pdfUrl)} target="_blank" rel="noopener noreferrer">Download PDF ↓</a></div>
+      <div class="presentation-frame"><iframe src={embedUrl} title={presentation.title} loading="lazy" allow="fullscreen" allowfullscreen></iframe></div>
+    </div>
+  </section>
+</SiteLayout>

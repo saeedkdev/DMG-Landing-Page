@@ -1,0 +1,31 @@
+---
+import PageHero from '../components/PageHero.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { getContactPage } from '../lib/sanity';
+
+export const prerender = true;
+const page = await getContactPage();
+---
+
+<SiteLayout title="Contact DMG | DMG Blockchain Solutions" description={page.intro} canonicalPath="/contact" current="contact">
+  <PageHero eyebrow="Contact" title={page.title} description={page.intro} />
+  <section class="contact-section">
+    <div class="shell contact-grid">
+      <article class="contact-card contact-card--address">
+        <p class="eyebrow">Company</p><h2>{page.companyName}</h2>
+        <address>{page.address.split('\n').map((line) => <>{line}<br /></>)}</address>
+      </article>
+      <article class="contact-card">
+        <p class="eyebrow">General inquiries</p><h2>Start a conversation.</h2>
+        <p>Company, investor, infrastructure and partnership inquiries.</p>
+        <a class="contact-link" href={`mailto:${page.generalEmail}`}>{page.generalEmail} <span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="contact-card">
+        <p class="eyebrow">Privacy</p><h2>Privacy compliance.</h2>
+        <p>Questions relating to DMG and Blockseer products and services.</p>
+        <a class="contact-link" href={`mailto:${page.privacyEmail}`}>{page.privacyEmail} <span aria-hidden="true">↗</span></a>
+      </article>
+    </div>
+    <div class="shell contact-consent"><p>{page.consentText}</p><a href="/privacy-policy">Read our Privacy Policy →</a></div>
+  </section>
+</SiteLayout>

@@ -8,6 +8,8 @@ interface Props {
   relatedPosts: BeehiivBlogPost[];
 }
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   const posts = await getBeehiivArticles();
 
@@ -62,6 +64,7 @@ const structuredData = JSON.stringify({
   image={post.thumbnail}
   canonicalPath={post.url}
   type="article"
+  current="insights"
 >
   <Fragment slot="head">
     <meta property="article:published_time" content={post.publishedAt} />
@@ -154,7 +157,7 @@ const structuredData = JSON.stringify({
   <section class="article-signoff" aria-labelledby="signoff-title">
     <div class="shell">
       <h2 id="signoff-title">Building infrastructure for what comes next.</h2>
-      <a class="blueprint-button" href="/#contact">Contact the DMG team</a>
+      <a class="blueprint-button" href="/contact">Contact the DMG team</a>
     </div>
   </section>
 </SiteLayout>

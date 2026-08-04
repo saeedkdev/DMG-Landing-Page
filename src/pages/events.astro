@@ -1,0 +1,18 @@
+---
+import InvestorSubnav from '../components/InvestorSubnav.astro';
+import PageHero from '../components/PageHero.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { getInvestorUpdates } from '../lib/sanity';
+
+export const prerender = true;
+const events = await getInvestorUpdates('event');
+const formatDate = (date?: string) => date ? new Intl.DateTimeFormat('en-CA', { dateStyle: 'long', timeStyle: 'short', timeZone: 'America/Toronto' }).format(new Date(date)) : 'Date to be announced';
+---
+
+<SiteLayout title="Events | DMG Blockchain Solutions" description="Upcoming DMG investor events, earnings calls and conferences." canonicalPath="/events" current="investors">
+  <PageHero eyebrow="Investor Centre" title="Upcoming events." description="Earnings calls, investor conferences and company events, maintained by the DMG team in Sanity." />
+  <InvestorSubnav />
+  <section class="updates-section"><div class="shell">
+    {events.length ? <div class="update-grid">{events.map((event) => <article class="update-card"><p class="eyebrow">{formatDate(event.date)}</p><h2>{event.title}</h2>{event.location && <p class="update-card__location">{event.location}</p>}{event.summary && <p>{event.summary}</p>}{(event.internalPath || event.url) && <a href={event.internalPath || event.url}>Event details →</a>}</article>)}</div> : <div class="empty-state"><p class="eyebrow">Event calendar</p><h2>No upcoming events are currently scheduled.</h2><p>New earnings calls and conference dates will appear here as soon as they are published.</p></div>}
+  </div></section>
+</SiteLayout>

@@ -1,9 +1,12 @@
 import type { BeehiivBlogPost } from './beehiiv';
+import type { SiteSettings } from './sanity';
 
 interface LandingTemplateOptions {
   template: string;
   assetUrls: Record<string, string>;
   posts: BeehiivBlogPost[];
+  settings: SiteSettings;
+  latestPresentationUrl: string;
 }
 
 function replaceRequired(source: string, before: string, after: string) {
@@ -62,6 +65,8 @@ export function prepareLandingTemplate({
   template,
   assetUrls,
   posts,
+  settings,
+  latestPresentationUrl,
 }: LandingTemplateOptions) {
   const start = template.indexOf('<x-dc>');
   const end = template.lastIndexOf('</body>');
@@ -164,6 +169,41 @@ export function prepareLandingTemplate({
             <a href="#insights" style="text-decoration:none;color:var(--color-accent-700)" style-hover="color:var(--color-accent-900)">RSS</a>
           </div>`;
   markup = replaceRequired(markup, placeholderLinks, '');
+
+  const infrastructureButton = `            <a href="#contact" class="btn btn-primary blueprint" style="background:var(--color-accent-500);border-color:var(--color-accent-400);color:#ffffff;min-height:48px">Full infrastructure overview
+              <i class="corner tl" style="color:rgba(242,242,243,0.55)"></i><i class="corner tr" style="color:rgba(242,242,243,0.55)"></i><i class="corner bl" style="color:rgba(242,242,243,0.55)"></i><i class="corner br" style="color:rgba(242,242,243,0.55)"></i>
+            </a>`;
+  markup = replaceRequired(markup, infrastructureButton, '');
+
+  markup = markup
+    .replace('href="#contact" style="font-size:14px;text-decoration:none;color:var(--color-accent-700)" style-hover="color:var(--color-accent-900)">Learn more', `href="${settings.terraPoolUrl}" target="_blank" rel="noopener noreferrer" style="font-size:14px;text-decoration:none;color:var(--color-accent-700)" style-hover="color:var(--color-accent-900)">Learn more`)
+    .replace('href="#contact" style="font-size:14px;text-decoration:none;color:var(--color-accent-700)" style-hover="color:var(--color-accent-900)">Learn more', `href="${settings.reactorUrl}" target="_blank" rel="noopener noreferrer" style="font-size:14px;text-decoration:none;color:var(--color-accent-700)" style-hover="color:var(--color-accent-900)">Learn more`)
+    .replace('href="#contact" style="font-size:14px;text-decoration:none;color:var(--color-accent-700)" style-hover="color:var(--color-accent-900)">Contact', `href="${settings.numisUrl}" target="_blank" rel="noopener noreferrer" style="font-size:14px;text-decoration:none;color:var(--color-accent-700)" style-hover="color:var(--color-accent-900)">Visit Numis Trust`)
+    .replace('href="#investors" class="btn btn-secondary" style="min-height:48px;padding-inline:var(--space-6)">Download Latest Presentation', `href="${latestPresentationUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="min-height:48px;padding-inline:var(--space-6)">Download Latest Presentation`)
+    .replace('href="#investors" class="card blueprint"', 'href="/financial" class="card blueprint"')
+    .replace('href="#investors" class="card blueprint"', 'href="/presentation" class="card blueprint"')
+    .replace('href="#investors" class="card blueprint"', 'href="/operational-updates" class="card blueprint"')
+    .replace('href="#investors" class="card blueprint"', 'href="/events" class="card blueprint"')
+    .replaceAll('href="#contact" class="btn btn-secondary"', 'href="/contact" class="btn btn-secondary"')
+    .replaceAll('href="#positioning" style="color:inherit;text-decoration:none;font-size:13px"', 'href="/about" style="color:inherit;text-decoration:none;font-size:13px"')
+    .replaceAll('href="#contact" style="color:inherit;text-decoration:none;font-size:13px"', 'href="/contact" style="color:inherit;text-decoration:none;font-size:13px"')
+    .replace('href="#investors" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Financial Results', 'href="/financial" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Financial Results')
+    .replace('href="#investors" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Presentations', 'href="/presentation" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Presentations')
+    .replace('href="#investors" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">News Releases', 'href="/operational-updates" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Operational Updates')
+    .replace('href="#contact" style="color:inherit;text-decoration:none" style-hover="color:#fff">Privacy', 'href="/privacy-policy" style="color:inherit;text-decoration:none" style-hover="color:#fff">Privacy')
+    .replace('href="#contact" style="color:inherit;text-decoration:none" style-hover="color:#fff">Terms', 'href="/terms-of-service" style="color:inherit;text-decoration:none" style-hover="color:#fff">Terms')
+    .replace('href="#contact" style="color:inherit;text-decoration:none" style-hover="color:#fff">Disclaimer', 'href="/disclaimer" style="color:inherit;text-decoration:none" style-hover="color:#fff">Disclaimer')
+    .replace('href="#contact" style="color:inherit;text-decoration:none" style-hover="color:#fff">Modern Slavery Statement', 'href="/modern-slavery" style="color:inherit;text-decoration:none" style-hover="color:#fff">Modern Slavery Statement')
+    .replace('href="https://www.linkedin.com"', `href="${settings.linkedinUrl}"`)
+    .replace('href="https://x.com"', `href="${settings.xUrl}"`)
+    .replaceAll('href="#contact" sc-camel-on-click', 'href="/contact" sc-camel-on-click')
+    .replaceAll('href="#contact" style="color:rgba(242,242,243,0.66)', 'href="/contact" style="color:rgba(242,242,243,0.66)')
+    .replace('href="#positioning" class="btn btn-primary blueprint"', 'href="/about" class="btn btn-primary blueprint"')
+    .replace('Names, descriptions and status are CMS-controlled; some are subject to brand approval.', 'DMG’s platforms connect infrastructure, software and trusted digital-asset services across one operating stack.')
+    .replace('Statements, MD&amp;A and news release. CMS document reference.', 'Statements, MD&amp;A, transcripts and annual materials.')
+    .replace('Current corporate deck, PDF. CMS document reference.', 'View the current corporate deck live or download the PDF.')
+    .replace('Monthly production and site progress. CMS news release.', 'Monthly production, operating results and site progress.')
+    .replace('Earnings dates and conferences. CMS event entries.', 'Earnings calls, investor conferences and company events.');
 
   return markup;
 }

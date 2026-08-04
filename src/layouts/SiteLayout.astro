@@ -9,9 +9,10 @@ interface Props {
   image?: string;
   canonicalPath: string;
   type?: 'website' | 'article';
+  current?: 'insights' | 'about' | 'investors' | 'contact';
 }
 
-const { title, description, image, canonicalPath, type = 'website' } = Astro.props;
+const { title, description, image, canonicalPath, type = 'website', current } = Astro.props;
 const canonicalUrl = new URL(canonicalPath, Astro.site ?? Astro.url.origin);
 const socialImage = image || '/assets/source/3406ad21-4a0f-4b01-b494-27f1ea20d112.webp';
 const absoluteSocialImage = new URL(socialImage, Astro.site ?? Astro.url.origin);
@@ -46,7 +47,7 @@ const absoluteSocialImage = new URL(socialImage, Astro.site ?? Astro.url.origin)
     <title>{title}</title>
   </head>
   <body>
-    <SiteHeader current="insights" />
+    <SiteHeader current={current} />
     <main id="main"><slot /></main>
     <SiteFooter />
   </body>

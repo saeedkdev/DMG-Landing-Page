@@ -1,6 +1,6 @@
 ---
 interface Props {
-  current?: 'insights';
+  current?: 'insights' | 'about' | 'investors' | 'contact';
 }
 
 const { current } = Astro.props;
@@ -30,10 +30,10 @@ const { current } = Astro.props;
       </a>
 
       <nav class="desktop-nav" aria-label="Primary">
-        <a href="/#positioning">Company</a>
+        <a href="/about" aria-current={current === 'about' ? 'page' : undefined}>Company</a>
         <a href="/#infrastructure">Infrastructure</a>
         <a href="/#platforms">Platforms</a>
-        <a href="/#investors">Investors</a>
+        <a href="/#investors" aria-current={current === 'investors' ? 'page' : undefined}>Investors</a>
         <a href="/insights" aria-current={current === 'insights' ? 'page' : undefined}>Insights</a>
       </nav>
 
@@ -47,12 +47,12 @@ const { current } = Astro.props;
       <details class="mobile-nav">
         <summary aria-label="Open site menu"><span></span><span></span><span></span></summary>
         <nav aria-label="Mobile">
-          <a href="/#positioning">Company</a>
+          <a href="/about" aria-current={current === 'about' ? 'page' : undefined}>Company</a>
           <a href="/#infrastructure">Infrastructure</a>
           <a href="/#platforms">Platforms</a>
-          <a href="/#investors">Investors</a>
+          <a href="/#investors" aria-current={current === 'investors' ? 'page' : undefined}>Investors</a>
           <a href="/insights" aria-current={current === 'insights' ? 'page' : undefined}>Insights</a>
-          <a href="/#contact">Contact</a>
+          <a href="/contact" aria-current={current === 'contact' ? 'page' : undefined}>Contact</a>
         </nav>
       </details>
     </div>

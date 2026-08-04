@@ -1,0 +1,5 @@
+---
+import LegalDocument from '../components/LegalDocument.astro'; import PageHero from '../components/PageHero.astro'; import SiteLayout from '../layouts/SiteLayout.astro'; import { getLegalPage } from '../lib/sanity';
+export const prerender = true; const page = await getLegalPage('terms-of-service'); if (!page) throw new Error('Terms of Service are missing from Sanity.');
+---
+<SiteLayout title="Terms of Service | DMG Blockchain Solutions" description="DMG Blockchain Solutions terms of service." canonicalPath="/terms-of-service"><PageHero eyebrow="Legal" title={page.title} /><LegalDocument page={page} /></SiteLayout>

@@ -3,6 +3,9 @@ import bundledTemplate from '../source/template.html?raw';
 import assetIndex from '../source/asset-index.json';
 import { getBeehiivPosts } from '../lib/beehiiv';
 import { prepareLandingTemplate } from '../lib/landing-template';
+import { downloadUrl, getPresentation, getSiteSettings } from '../lib/sanity';
+
+export const prerender = true;
 
 const assetBase = '/assets/source';
 const assetUrls = Object.fromEntries(
@@ -13,10 +16,13 @@ const assetUrls = Object.fromEntries(
 );
 
 const beehiivPosts = await getBeehiivPosts();
+const [settings, presentation] = await Promise.all([getSiteSettings(), getPresentation()]);
 const pageMarkup = prepareLandingTemplate({
   template: bundledTemplate,
   assetUrls,
   posts: beehiivPosts,
+  settings,
+  latestPresentationUrl: downloadUrl(presentation.pdfUrl),
 });
 
 const title = 'DMG Blockchain Solutions | Canadian Digital Infrastructure';

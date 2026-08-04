@@ -1,0 +1,21 @@
+---
+import type { LegalPageContent } from '../lib/sanity';
+
+interface Props { page: LegalPageContent }
+const { page } = Astro.props;
+---
+
+<article class="legal-document">
+  <div class="shell legal-document__layout">
+    <aside>
+      <p class="footer-label">DMG legal</p>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-of-service">Terms of Service</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/modern-slavery">Modern Slavery</a>
+    </aside>
+    <div class="legal-document__body">
+      {page.blocks.map((block) => block.style === 'heading' ? <h2>{block.text}</h2> : <p>{block.text}</p>)}
+    </div>
+  </div>
+</article>

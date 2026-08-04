@@ -1,3 +1,9 @@
+---
+import { getSiteSettings } from '../lib/sanity';
+
+const settings = await getSiteSettings();
+---
+
 <footer class="site-footer">
   <div class="shell">
     <div class="site-footer__grid">
@@ -14,10 +20,10 @@
 
       <nav aria-labelledby="footer-company">
         <p id="footer-company" class="footer-label">Company</p>
-        <a href="/#positioning">About DMG</a>
-        <a href="/#positioning">Leadership</a>
-        <a href="/#contact">Careers</a>
-        <a href="/#contact">Contact</a>
+        <a href="/about">About DMG</a>
+        <a href="https://www.dmgblockchain.com/team" target="_blank" rel="noopener noreferrer">Leadership</a>
+        <a href="https://www.dmgblockchain.com/careers" target="_blank" rel="noopener noreferrer">Careers</a>
+        <a href="/contact">Contact</a>
       </nav>
 
       <nav aria-labelledby="footer-infrastructure">
@@ -31,9 +37,21 @@
       <nav aria-labelledby="footer-resources">
         <p id="footer-resources" class="footer-label">Resources</p>
         <a href="/insights">Insights</a>
-        <a href="/#investors">Investor Centre</a>
+        <a href="/financial">Financials</a>
+        <a href="/presentation">Presentation</a>
+        <a href="/events">Events</a>
         <a href="https://www.sedarplus.ca" target="_blank" rel="noopener noreferrer">SEDAR+</a>
         <a href="https://www.blockseer.com" target="_blank" rel="noopener noreferrer">Blockseer</a>
+      </nav>
+
+      <nav aria-labelledby="footer-legal">
+        <p id="footer-legal" class="footer-label">Legal</p>
+        <a href="/privacy-policy">Privacy</a>
+        <a href="/terms-of-service">Terms</a>
+        <a href="/disclaimer">Disclaimer</a>
+        <a href="/modern-slavery">Modern Slavery</a>
+        <a href={settings.linkedinUrl} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href={settings.xUrl} target="_blank" rel="noopener noreferrer">X</a>
       </nav>
     </div>
 

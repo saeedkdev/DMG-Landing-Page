@@ -1,0 +1,5 @@
+---
+import LegalDocument from '../components/LegalDocument.astro'; import PageHero from '../components/PageHero.astro'; import SiteLayout from '../layouts/SiteLayout.astro'; import { getLegalPage } from '../lib/sanity';
+export const prerender = true; const page = await getLegalPage('modern-slavery'); if (!page) throw new Error('Modern Slavery statement is missing from Sanity.');
+---
+<SiteLayout title="Modern Slavery Statement | DMG Blockchain Solutions" description="DMG Blockchain Solutions statement regarding modern slavery." canonicalPath="/modern-slavery"><PageHero eyebrow="Legal" title={page.title} /><LegalDocument page={page} /></SiteLayout>

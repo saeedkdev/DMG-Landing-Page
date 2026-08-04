@@ -1,0 +1,41 @@
+---
+import InvestorSubnav from '../components/InvestorSubnav.astro';
+import PageHero from '../components/PageHero.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { documentUrl, downloadUrl, getFinancialDocuments } from '../lib/sanity';
+
+export const prerender = true;
+const documents = await getFinancialDocuments();
+const years = [...new Set(documents.map((document) => document.year))].sort((a, b) => b - a);
+const categories = ['Financial Statements', 'MD&A', 'Transcript', 'AIF', 'AGSM', 'Financial Results Call', 'Other'];
+---
+
+<SiteLayout title="Financials | DMG Blockchain Solutions" description="DMG financial statements, MD&A, transcripts and annual filings." canonicalPath="/financial" current="investors">
+  <PageHero eyebrow="Investor Centre" title="Financial information, organized for clarity." description="Financial statements, management discussion and analysis, transcripts and annual meeting materials from DMG Blockchain Solutions." />
+  <InvestorSubnav />
+  <section class="document-archive">
+    <div class="shell">
+      {years.map((year) => (
+        <section class="document-year" aria-labelledby={`year-${year}`}>
+          <div class="document-year__heading"><p class="eyebrow">Reporting archive</p><h2 id={`year-${year}`}>{year} financial results</h2></div>
+          <div class="document-categories">
+            {categories.map((category) => {
+              const categoryDocuments = documents.filter((document) => document.year === year && document.category === category);
+              return categoryDocuments.length > 0 && (
+                <section class="document-category">
+                  <h3>{category}</h3>
+                  <div class="document-list">
+                    {categoryDocuments.map((document) => {
+                      const url = documentUrl(document);
+                      return <article><div><h4>{document.title}</h4>{document.note && <p>{document.note}</p>}</div><div class="document-actions"><a href={url} target="_blank" rel="noopener noreferrer">View ↗</a>{(/drive\.google|cdn\.sanity/.test(url)) && <a href={downloadUrl(url)} target="_blank" rel="noopener noreferrer">Download ↓</a>}</div></article>;
+                    })}
+                  </div>
+                </section>
+              );
+            })}
+          </div>
+        </section>
+      ))}
+    </div>
+  </section>
+</SiteLayout>

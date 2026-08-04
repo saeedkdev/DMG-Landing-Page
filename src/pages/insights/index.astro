@@ -4,12 +4,13 @@ import SiteLayout from '../../layouts/SiteLayout.astro';
 import { getBeehiivArticles } from '../../lib/beehiiv';
 
 const posts = await getBeehiivArticles();
+export const prerender = true;
 const title = 'DMG Insights | Digital Infrastructure, AI and Bitcoin';
 const description =
   'DMG research, company updates, and perspectives on AI infrastructure, energy, Bitcoin, and institutional digital assets.';
 ---
 
-<SiteLayout title={title} description={description} canonicalPath="/insights">
+<SiteLayout title={title} description={description} canonicalPath="/insights" current="insights">
   <section class="insights-hero" aria-labelledby="insights-title">
     <div class="shell insights-hero__inner">
       <div>
@@ -39,7 +40,7 @@ const description =
   <section class="article-signoff" aria-labelledby="signoff-title">
     <div class="shell">
       <h2 id="signoff-title">Building infrastructure for what comes next.</h2>
-      <a class="blueprint-button" href="/#contact">Contact the DMG team</a>
+      <a class="blueprint-button" href="/contact">Contact the DMG team</a>
     </div>
   </section>
 </SiteLayout>

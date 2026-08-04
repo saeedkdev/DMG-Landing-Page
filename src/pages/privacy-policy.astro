@@ -1,0 +1,5 @@
+---
+import LegalDocument from '../components/LegalDocument.astro'; import PageHero from '../components/PageHero.astro'; import SiteLayout from '../layouts/SiteLayout.astro'; import { getLegalPage } from '../lib/sanity';
+export const prerender = true; const page = await getLegalPage('privacy-policy'); if (!page) throw new Error('Privacy Policy is missing from Sanity.');
+---
+<SiteLayout title="Privacy Policy | DMG Blockchain Solutions" description="DMG Blockchain Solutions privacy policy." canonicalPath="/privacy-policy"><PageHero eyebrow="Legal" title={page.title} /><LegalDocument page={page} /></SiteLayout>

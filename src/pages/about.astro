@@ -1,0 +1,41 @@
+---
+import PageHero from '../components/PageHero.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { getAboutPage } from '../lib/sanity';
+
+export const prerender = true;
+const page = await getAboutPage();
+---
+
+<SiteLayout title="About DMG | DMG Blockchain Solutions" description={page.intro} canonicalPath="/about" current="about">
+  <PageHero eyebrow={page.eyebrow} title={page.title} description={page.intro} />
+
+  <section class="about-strategy" aria-labelledby="pillars-title">
+    <div class="shell">
+      <div class="section-heading"><h2 id="pillars-title">Our strategic pillars.</h2></div>
+      <div class="strategy-grid">
+        <article>
+          <div class="strategy-grid__visual"><img src={page.coreImageUrl || '/assets/about/core-white.avif'} alt="DMG Core data center infrastructure strategy" /></div>
+          <p class="eyebrow">Core</p>
+          <h3>{page.coreTitle}</h3>
+          <p>{page.coreDescription}</p>
+        </article>
+        <article>
+          <div class="strategy-grid__visual"><img src={page.corePlusImageUrl || '/assets/about/core-plus-white.avif'} alt="DMG Core+ software and services strategy" /></div>
+          <p class="eyebrow">Core+</p>
+          <h3>{page.corePlusTitle}</h3>
+          <p>{page.corePlusDescription}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="milestone-section" aria-labelledby="milestones-title">
+    <div class="shell">
+      <div class="section-heading"><h2 id="milestones-title">{page.milestonesTitle}</h2></div>
+      <figure><img src={page.milestonesImageUrl || '/assets/about/milestone-desktop.avif'} alt="Timeline of DMG Blockchain Solutions milestones" /></figure>
+    </div>
+  </section>
+
+  <section class="article-signoff"><div class="shell"><h2>Built through vertical integration.</h2><a class="blueprint-button" href="/contact">Talk with DMG</a></div></section>
+</SiteLayout>

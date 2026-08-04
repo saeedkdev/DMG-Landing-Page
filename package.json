@@ -9,7 +9,10 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "extract:source": "node scripts/extract-bundle.mjs"
+    "extract:source": "node scripts/extract-bundle.mjs",
+    "sanity": "sanity dev",
+    "sanity:deploy": "sanity deploy",
+    "sanity:seed": "node --env-file=.env scripts/seed-sanity.mjs"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
@@ -17,6 +20,10 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "parse5": "^8.0.1"
+    "@astrojs/node": "^11.0.3",
+    "@sanity/client": "^7.26.0",
+    "@sanity/vision": "^6.8.0",
+    "parse5": "^8.0.1",
+    "sanity": "^6.8.0"
   }
 }
