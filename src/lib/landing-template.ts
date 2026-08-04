@@ -28,14 +28,6 @@ function serializeForInlineScript(value: unknown) {
   });
 }
 
-function publicationUrl(posts: BeehiivBlogPost[]) {
-  try {
-    return new URL(posts[0].url).origin;
-  } catch {
-    return '#insights';
-  }
-}
-
 function injectPosts(source: string, posts: BeehiivBlogPost[]) {
   const articlesStartMarker = 'const ARTICLES = [';
   const componentMarker = '\n\nclass Component extends DCLogic {';
@@ -46,9 +38,21 @@ function injectPosts(source: string, posts: BeehiivBlogPost[]) {
     throw new Error('Unable to prepare the landing template: article data block is missing.');
   }
 
+  const landingPosts = posts.map((post) => ({
+    id: post.id,
+    slot: post.slot,
+    cat: post.cat,
+    title: post.title,
+    excerpt: post.excerpt,
+    author: post.author,
+    date: post.date,
+    thumbnail: post.thumbnail,
+    url: post.url,
+    art: post.art,
+  }));
   const dataBlock = [
-    `const ARTICLES = ${serializeForInlineScript(posts)};`,
-    `const PUBLICATION_URL = ${serializeForInlineScript(publicationUrl(posts))};`,
+    `const ARTICLES = ${serializeForInlineScript(landingPosts)};`,
+    `const PUBLICATION_URL = ${serializeForInlineScript('/insights')};`,
   ].join('\n');
 
   return `${source.slice(0, start)}${dataBlock}${source.slice(end)}`;
@@ -121,12 +125,12 @@ export function prepareLandingTemplate({
   markup = replaceRequired(
     markup,
     '<a href="#insights" class="btn btn-primary blueprint" style="align-self:start;min-height:46px;padding-inline:var(--space-6)">Read article',
-    '<a href="{{ featured.url }}" target="_blank" rel="noopener" class="btn btn-primary blueprint" style="align-self:start;min-height:46px;padding-inline:var(--space-6)">Read article',
+    '<a href="{{ featured.url }}" class="btn btn-primary blueprint" style="align-self:start;min-height:46px;padding-inline:var(--space-6)">Read article',
   );
   markup = replaceRequired(
     markup,
     '<a href="#insights" class="card blueprint" style="padding:0;gap:0;text-decoration:none;color:inherit;overflow:hidden" style-hover="border-color:var(--color-accent)">',
-    '<a href="{{ a.url }}" target="_blank" rel="noopener" class="card blueprint" style="padding:0;gap:0;text-decoration:none;color:inherit;overflow:hidden" style-hover="border-color:var(--color-accent)">',
+    '<a href="{{ a.url }}" class="card blueprint" style="padding:0;gap:0;text-decoration:none;color:inherit;overflow:hidden" style-hover="border-color:var(--color-accent)">',
   );
   markup = replaceRequired(
     markup,
@@ -151,7 +155,7 @@ export function prepareLandingTemplate({
   markup = replaceRequired(
     markup,
     '<a href="#insights" class="btn btn-secondary" style="min-height:46px;padding-inline:var(--space-6)">View all insights <span aria-hidden="true">→</span></a>',
-    '<a href="{{ publicationUrl }}" target="_blank" rel="noopener" class="btn btn-secondary" style="min-height:46px;padding-inline:var(--space-6)">View all posts <span aria-hidden="true">↗</span></a>',
+    '<a href="{{ publicationUrl }}" class="btn btn-secondary" style="min-height:46px;padding-inline:var(--space-6)">View all posts <span aria-hidden="true">→</span></a>',
   );
 
   const placeholderLinks = `          <div style="display:flex;flex-wrap:wrap;gap:var(--space-6);align-items:center;font-size:14px">

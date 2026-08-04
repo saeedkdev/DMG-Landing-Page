@@ -26,21 +26,26 @@ The static site is emitted to `dist/`.
 
 ## Beehiiv posts
 
-The insights section is populated from the Beehiiv publication during Astro's
-server-side build. Add these values to `.env` locally and to the environment of
-the deployment service:
+The insights section, archive, and article detail pages are populated from the
+Beehiiv publication during Astro's server-side build. Add these values to `.env`
+locally and to the environment of the deployment service:
 
 ```sh
 BEEHIIV_API_KEY=your_beehiiv_api_key
 BEEHIIV_PUBLICATION_ID=pub_your_publication_id
 ```
 
-Neither value is exposed to browser JavaScript. Rebuild or redeploy the site to
-publish newly confirmed Beehiiv posts.
+Neither value is exposed to browser JavaScript. Astro safely extracts the free
+web article body and generates native routes at `/insights/[slug]`. Rebuild or
+redeploy the site to publish newly confirmed Beehiiv posts.
 
 ## Source structure
 
 - `src/pages/index.astro` provides document metadata and renders the landing page.
+- `src/pages/insights/` contains the native archive and statically generated
+  article routes.
+- `src/layouts/SiteLayout.astro` and `src/styles/site.css` provide the shared DMG
+  editorial chrome and responsive design system.
 - `src/source/template.html` is the extracted page template used by Astro.
 - `public/assets/source/` contains the embedded DMG logo, campus image, fonts,
   and self-hosted interaction dependencies.

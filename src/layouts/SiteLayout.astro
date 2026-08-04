@@ -1,0 +1,53 @@
+---
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import '../styles/site.css';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  canonicalPath: string;
+  type?: 'website' | 'article';
+}
+
+const { title, description, image, canonicalPath, type = 'website' } = Astro.props;
+const canonicalUrl = new URL(canonicalPath, Astro.site ?? Astro.url.origin);
+const socialImage = image || '/assets/source/3406ad21-4a0f-4b01-b494-27f1ea20d112.webp';
+const absoluteSocialImage = new URL(socialImage, Astro.site ?? Astro.url.origin);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0D1745" />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={absoluteSocialImage} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={absoluteSocialImage} />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/source/5b070d9e-9a82-4903-8ece-d2f822c17788.png"
+    />
+    <slot name="head" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <SiteHeader current="insights" />
+    <main id="main"><slot /></main>
+    <SiteFooter />
+  </body>
+</html>

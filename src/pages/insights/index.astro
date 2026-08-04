@@ -1,0 +1,45 @@
+---
+import InsightCard from '../../components/InsightCard.astro';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { getBeehiivArticles } from '../../lib/beehiiv';
+
+const posts = await getBeehiivArticles();
+const title = 'DMG Insights | Digital Infrastructure, AI and Bitcoin';
+const description =
+  'DMG research, company updates, and perspectives on AI infrastructure, energy, Bitcoin, and institutional digital assets.';
+---
+
+<SiteLayout title={title} description={description} canonicalPath="/insights">
+  <section class="insights-hero" aria-labelledby="insights-title">
+    <div class="shell insights-hero__inner">
+      <div>
+        <p class="eyebrow">DMG Insights</p>
+        <h1 id="insights-title">Ideas shaping the infrastructure economy.</h1>
+      </div>
+      <p class="insights-hero__lede">
+        Research, engineering perspectives and company updates across AI infrastructure,
+        energy, Bitcoin and institutional digital assets.
+      </p>
+    </div>
+  </section>
+
+  <section id="archive" class="archive-section" aria-label="All DMG insights">
+    <div class="shell">
+      <div class="archive-intro">
+        <p><strong>Latest publications</strong></p>
+        <p>{posts.length} articles and company updates</p>
+      </div>
+
+      <div class="archive-grid">
+        {posts.map((post, index) => <InsightCard post={post} priority={index < 3} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="article-signoff" aria-labelledby="signoff-title">
+    <div class="shell">
+      <h2 id="signoff-title">Building infrastructure for what comes next.</h2>
+      <a class="blueprint-button" href="/#contact">Contact the DMG team</a>
+    </div>
+  </section>
+</SiteLayout>

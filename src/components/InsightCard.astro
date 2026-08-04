@@ -1,0 +1,36 @@
+---
+import type { BeehiivBlogPost } from '../lib/beehiiv';
+
+interface Props {
+  post: BeehiivBlogPost;
+  priority?: boolean;
+}
+
+const { post, priority = false } = Astro.props;
+---
+
+<article class="insight-card">
+  <a href={post.url} aria-label={`Read ${post.title}`}>
+    <div class="insight-card__media">
+      {post.thumbnail ? (
+        <img
+          src={post.thumbnail}
+          alt=""
+          loading={priority ? 'eager' : 'lazy'}
+          decoding="async"
+        />
+      ) : (
+        <div class="insight-card__placeholder" aria-hidden="true"><span>DMG</span></div>
+      )}
+    </div>
+    <div class="insight-card__body">
+      <div class="insight-card__meta">
+        <span>{post.cat}</span>
+        <time datetime={post.publishedAt}>{post.date}</time>
+      </div>
+      <h2>{post.title}</h2>
+      <p>{post.excerpt}</p>
+      <span class="insight-card__action">Read article <span aria-hidden="true">→</span></span>
+    </div>
+  </a>
+</article>

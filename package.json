@@ -15,5 +15,8 @@
     "@astrojs/check": "^0.9.6",
     "astro": "^7.1.6",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "parse5": "^8.0.1"
   }
 }

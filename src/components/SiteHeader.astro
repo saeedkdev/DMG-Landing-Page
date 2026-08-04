@@ -1,0 +1,60 @@
+---
+interface Props {
+  current?: 'insights';
+}
+
+const { current } = Astro.props;
+---
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="site-chrome">
+  <div class="market-bar">
+    <div class="shell market-bar__inner">
+      <span>TSXV: DMGI</span>
+      <span aria-hidden="true">/</span>
+      <span>OTCQB: DMGGF</span>
+      <span class="market-bar__label">Canadian digital infrastructure</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="site-logo" href="/" aria-label="DMG Blockchain Solutions — home">
+        <img
+          src="/assets/source/5b070d9e-9a82-4903-8ece-d2f822c17788.png"
+          alt="DMG Blockchain Solutions"
+          width="546"
+          height="249"
+        />
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary">
+        <a href="/#positioning">Company</a>
+        <a href="/#infrastructure">Infrastructure</a>
+        <a href="/#platforms">Platforms</a>
+        <a href="/#investors">Investors</a>
+        <a href="/insights" aria-current={current === 'insights' ? 'page' : undefined}>Insights</a>
+      </nav>
+
+      <div class="desktop-utils">
+        <a class="utility-link" href="https://www.blockseer.com" target="_blank" rel="noopener noreferrer">
+          Blockseer Explorer
+        </a>
+        <a class="header-cta blueprint-button" href="/#investors">Investor Relations</a>
+      </div>
+
+      <details class="mobile-nav">
+        <summary aria-label="Open site menu"><span></span><span></span><span></span></summary>
+        <nav aria-label="Mobile">
+          <a href="/#positioning">Company</a>
+          <a href="/#infrastructure">Infrastructure</a>
+          <a href="/#platforms">Platforms</a>
+          <a href="/#investors">Investors</a>
+          <a href="/insights" aria-current={current === 'insights' ? 'page' : undefined}>Insights</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+</div>
