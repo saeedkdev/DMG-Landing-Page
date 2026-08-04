@@ -97,6 +97,13 @@ const EMBED_HOSTS = new Set([
   'www.youtube-nocookie.com',
   'player.vimeo.com',
 ]);
+const BEEHIIV_FOOTER_ICON_ALTS = new Set([
+  'Website',
+  'Twitter',
+  'YouTube',
+  'Instagram',
+  'LinkedIn',
+]);
 
 let publishedPostsRequest: Promise<BeehiivBlogPost[]> | undefined;
 
@@ -217,6 +224,8 @@ function rewriteArticleUrl(value: string) {
 
 function sanitizeAttributes(node: HtmlNode) {
   const tagName = node.tagName ?? '';
+  const originalStyle = attribute(node, 'style') ?? '';
+  const originalAlt = attribute(node, 'alt') ?? '';
   const clean = (node.attrs ?? []).filter(({ name, value }) => {
     if (!SAFE_ATTRIBUTES.has(name)) return false;
 
@@ -260,6 +269,17 @@ function sanitizeAttributes(node: HtmlNode) {
     if (!clean.some((item) => item.name === 'decoding')) {
       clean.push({ name: 'decoding', value: 'async' });
     }
+
+    const widthPercent = Number(originalStyle.match(/(?:^|;)\s*width\s*:\s*([\d.]+)%/i)?.[1]);
+    const mediaClass = BEEHIIV_FOOTER_ICON_ALTS.has(originalAlt)
+      ? 'article-media--icon'
+      : widthPercent > 0 && widthPercent <= 50
+        ? 'article-media--compact'
+        : widthPercent > 50 && widthPercent < 100
+          ? 'article-media--contained'
+          : '';
+
+    if (mediaClass) clean.push({ name: 'class', value: mediaClass });
   }
 
   if (tagName === 'iframe' && !clean.some((item) => item.name === 'loading')) {
@@ -288,6 +308,47 @@ function collectText(node: HtmlNode): string {
   return (node.childNodes ?? []).map(collectText).join(' ');
 }
 
+function stripBeehiivFooter(content: HtmlNode) {
+  function trimWithin(node: HtmlNode): boolean {
+    const children = node.childNodes ?? [];
+    const footerIconIndexes = children.flatMap((child, index) => {
+      const hasFooterIcon = Boolean(
+        findElement(
+          child,
+          (candidate) =>
+            candidate.tagName === 'img' &&
+            BEEHIIV_FOOTER_ICON_ALTS.has(attribute(candidate, 'alt') ?? ''),
+        ),
+      );
+      return hasFooterIcon ? [index] : [];
+    });
+
+    const companyPromoIndex = children.findIndex((child) =>
+      collectText(child).toLowerCase().includes('learn more about our company'),
+    );
+
+    const footerStarts = [
+      ...(footerIconIndexes.length >= 3 ? [footerIconIndexes[0]] : []),
+      ...(companyPromoIndex > 0 ? [companyPromoIndex] : []),
+    ];
+
+    if (footerStarts.length > 0) {
+      node.childNodes = children.slice(0, Math.min(...footerStarts));
+      return true;
+    }
+
+    if (companyPromoIndex === 0 && trimWithin(children[0])) return true;
+
+    for (const child of children) {
+      if (trimWithin(child)) return true;
+    }
+
+    return false;
+  }
+
+  trimWithin(content);
+}
+
 function prepareArticleContent(source: string | undefined) {
   if (!source) return { html: '', wordCount: 0 };
 
@@ -295,6 +356,7 @@ function prepareArticleContent(source: string | undefined) {
   const content = findElement(document, (node) => attribute(node, 'id') === 'content-blocks');
   if (!content) return { html: '', wordCount: 0 };
 
+  stripBeehiivFooter(content);
   sanitizeTree(content);
   const text = collectText(content).replace(/\s+/g, ' ').trim();
   const html = serialize(content as unknown as DefaultTreeAdapterMap['parentNode']).trim();
