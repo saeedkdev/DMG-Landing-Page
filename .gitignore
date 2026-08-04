@@ -1,0 +1,26 @@
+# dependencies
+node_modules/
+
+# Astro build output and generated metadata
+dist/
+.astro/
+
+# environment files
+.env
+.env.*
+!.env.example
+
+# logs and local tooling
+*.log
+.DS_Store
+.idea/
+.vscode/
+
+# test and coverage output
+coverage/
+playwright-report/
+test-results/
+
+# package-manager caches
+.npm/
+.pnpm-store/

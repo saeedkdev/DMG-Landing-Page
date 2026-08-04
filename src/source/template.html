@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="dfa60081-34f3-42e1-b384-c9a6a0c32f36"></script>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* Industry — design-system tokens and component classes. This file is the source of truth for the system's look; retune it here and see readme.md. */
+/* vietnamese */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("ff1eee30-0fce-4a70-b5ff-7ccb50ecd9f5") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("b30d0202-de08-43f1-a57a-3a7c9606be14") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("e4c79d94-64f4-48b4-9b47-27f2c2e714e7") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("5c415184-5782-4a51-933b-b74de37e9f3e") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("3d9f9d82-5ffc-42c0-83ac-d02bb8b80689") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("6d3d5319-8c60-4e41-a350-65153bbf2ead") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fd412811-3a1c-449b-bb2f-1bdb4018a861") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("cba227d7-7d11-4023-b175-d2f894e2df19") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("a0856bfb-1246-4252-82e0-22670fb1f192") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("7db0c151-2c93-4795-99ee-1a5e1d9b5591") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("8f6b234b-49f5-49db-b7b1-880b9764ef83") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("1f1c06c9-afb8-4a81-9016-e8d8ff26b9cb") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("8831035e-f74c-4bed-87f1-702fb4f93f0b") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("8eaf30cb-b4d2-466d-a63d-61ad11ce4fab") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("d0c4c38a-e73b-420e-8ebe-ffaf8ac72a37") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+:root {
+  --color-bg: #f2f2f3;
+  --color-surface: #e9e9ea;
+  --color-text: #1d1f20;
+  --color-accent: #5980a6;
+  --color-accent-2: #728fab;
+  --color-divider: color-mix(in srgb, #1d1f20 16%, transparent);
+
+  /* Tonal ramps — generated in OKLCH on one shared lightness scale, so the
+     same step of any role matches the others in visual value. */
+  --color-neutral-100: #f5f5f8;
+  --color-neutral-200: #e7e7ea;
+  --color-neutral-300: #d4d4d7;
+  --color-neutral-400: #b7b7ba;
+  --color-neutral-500: #98989b;
+  --color-neutral-600: #7a7a7d;
+  --color-neutral-700: #5d5d60;
+  --color-neutral-800: #424244;
+  --color-neutral-900: #2b2b2d;
+
+  --color-accent-100: #eef6ff;
+  --color-accent-200: #d6ebff;
+  --color-accent-300: #b5d9fd;
+  --color-accent-400: #94bce3;
+  --color-accent-500: #749dc4;
+  --color-accent-600: #597ea3;
+  --color-accent-700: #416180;
+  --color-accent-800: #2c455d;
+  --color-accent-900: #1d2d3d;
+
+  --color-accent-2-100: #eef6ff;
+  --color-accent-2-200: #d6ebff;
+  --color-accent-2-300: #bdd8f2;
+  --color-accent-2-400: #9ebbd8;
+  --color-accent-2-500: #7e9cb8;
+  --color-accent-2-600: #627d98;
+  --color-accent-2-700: #486077;
+  --color-accent-2-800: #314457;
+  --color-accent-2-900: #1f2d3a;
+
+  --font-heading: "Barlow Condensed", system-ui, sans-serif;
+  --font-heading-weight: 600;
+  --font-body: "Barlow", system-ui, sans-serif;
+
+  --space-1: 3.4px;
+  --space-2: 6.8px;
+  --space-3: 10.2px;
+  --space-4: 13.6px;
+  --space-6: 20.4px;
+  --space-8: 27.2px;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 7px;
+
+  /* Elevation — derived from the ground: soft ink-tinted shadows on a
+     light theme, a hairline edge + ambient darkness on a dark one. */
+  --shadow-sm: 0 1px 2px color-mix(in srgb, #2b2b2d 14%, transparent);
+  --shadow-md: 0 3px 10px color-mix(in srgb, #2b2b2d 16%, transparent);
+  --shadow-lg: 0 12px 32px color-mix(in srgb, #2b2b2d 22%, transparent);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); }
+
+.blueprint {
+  position: relative;
+  border: 1px solid var(--color-divider);
+  border-radius: 0;
+}
+/* The overlay image treatments (halftone, duotone) clip their overlay
+   (overflow:hidden); a blueprint wrapper draws its registration marks
+   outside the box, so when both classes share a wrapper the frame must
+   win. */
+.blueprint.halftone, .blueprint.plate, .blueprint.duotone { overflow: visible; }
+.blueprint > .corner {
+  position: absolute; width: 11px; height: 11px;
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+}
+.blueprint > .corner::before, .blueprint > .corner::after {
+  content: ""; position: absolute; background: currentColor;
+}
+.blueprint > .corner::before { left: 5px; top: 0; width: 1px; height: 100%; }
+.blueprint > .corner::after  { top: 5px; left: 0; width: 100%; height: 1px; }
+.blueprint > .corner.tl { top: -6px; left: -6px; }
+.blueprint > .corner.tr { top: -6px; right: -6px; }
+.blueprint > .corner.bl { bottom: -6px; left: -6px; }
+.blueprint > .corner.br { bottom: -6px; right: -6px; }
+
+.duotone{position:relative;overflow:hidden}
+.duotone::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:var(--color-accent);mix-blend-mode:color}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Components — built with the tokens above. Plain CSS
+   on plain HTML: no JavaScript, no build step. Each class is documented in
+   readme.md and demonstrated in foundations/ and components/.
+   ══════════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-size: 15px; line-height: 1.55; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  line-height: 1.12; letter-spacing: -0.015em; margin: 0 0 var(--space-2);
+}
+h1 { font-size: 42px; }
+h2 { font-size: 32px; }
+h3 { font-size: 25px; }
+h4 { font-size: 20px; }
+h5 { font-size: 16px; }
+h6 { font-size: 13px; }
+h6 { letter-spacing: 0.08em; text-transform: uppercase; }
+p { margin: 0 0 var(--space-3); }
+a { color: var(--color-accent); text-underline-offset: 3px; }
+img { display: block; max-width: 100%; }
+figure { margin: 0; }
+figcaption {
+  font-size: 11px; margin-top: var(--space-1);
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+}
+.text-muted { color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
+
+/* — rules — */
+.hr {
+  height: 1px; border: 0; margin: var(--space-4) 0;
+  background: var(--color-divider);
+}
+
+/* — buttons — */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  cursor: pointer; text-decoration: none;
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 14px; line-height: 1.2; color: var(--color-text); /* matches the .input's 14px —
+     the pair sits side by side in sign-up rows */
+  background: transparent; border: 1px solid transparent;
+  padding: var(--space-2) calc(var(--space-3) * 1.2);
+  border-radius: var(--radius-md);
+}
+.btn svg { display: block; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-primary { background: var(--color-accent); color: var(--color-bg); }
+.btn-primary:hover { background: var(--color-accent-600); }
+.btn-primary:active { background: var(--color-accent-700); }
+.btn-secondary { border-color: var(--color-divider); }
+.btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
+.btn-ghost { color: var(--color-accent); padding-inline: var(--space-1); }
+.btn-ghost:hover { background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
+.btn-ghost:active { background: color-mix(in srgb, var(--color-accent) 18%, transparent); }
+.btn-icon { width: 36px; height: 36px; padding: 0; }
+.btn-block { width: 100%; margin-top: var(--space-2); }
+
+/* — forms — */
+.field > label {
+  display: block; font-size: 12px; margin-bottom: 5px;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+.input {
+  width: 100%; min-height: 36px; padding: 6px 10px; font: inherit;
+  font-size: 14px; color: var(--color-text); caret-color: var(--color-accent);
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.input:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transparent); }
+.input:focus-visible { border-color: var(--color-accent); outline-offset: 0; }
+textarea.input { min-height: 90px; resize: vertical; }
+.radio { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; }
+.radio input, .seg-opt input {
+  position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none;
+}
+.radio .dot {
+  width: 16px; height: 16px; flex: none; border-radius: 50%;
+  border: 1.5px solid var(--color-divider);
+}
+.radio:hover .dot { border-color: var(--color-accent); }
+.radio input:checked + .dot {
+  border-color: var(--color-accent); background: var(--color-accent);
+  box-shadow: inset 0 0 0 4px var(--color-bg);
+}
+.radio input:focus-visible + .dot { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.seg {
+  display: inline-flex; overflow: hidden;
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.seg-opt {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 12px; font-size: 13px; cursor: pointer;
+}
+.seg-opt + .seg-opt { border-left: 1px solid var(--color-divider); }
+.seg-opt:has(input:checked) { background: var(--color-accent); color: var(--color-bg); }
+.seg-opt:not(:has(input:checked)):hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.seg-opt:has(input:focus-visible) { outline: 2px solid var(--color-accent); outline-offset: -2px; }
+
+/* — cards — */
+.card {
+  display: flex; flex-direction: column; gap: var(--space-2);
+  padding: var(--space-3); border-radius: var(--radius-md); background: var(--color-surface);
+}
+.card-kicker { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); }
+.card-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 17px; line-height: 1.2;
+}
+.card-body { margin: 0; font-size: 13px; opacity: 0.8; flex: 1; }
+.card-meta {
+  display: flex; align-items: center; gap: 6px; font-size: 11px;
+  color: color-mix(in srgb, var(--color-text) 50%, transparent);
+}
+.elev-sm { box-shadow: var(--shadow-sm); }
+.elev-md { box-shadow: var(--shadow-md); }
+.elev-lg { box-shadow: var(--shadow-lg); }
+
+/* — tags — */
+.tag {
+  display: inline-flex; align-items: center; font-size: 11px;
+  letter-spacing: 0.02em; padding: 3px 10px;
+  border-radius: calc(var(--radius-md) * 0.75);
+}
+.tag-accent { background: var(--color-accent-100); color: var(--color-accent-800); }
+.tag-accent-2 { background: var(--color-accent-2-100); color: var(--color-accent-2-800); }
+.tag-neutral { background: var(--color-neutral-100); color: var(--color-neutral-800); }
+.tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); }
+
+/* — navigation — */
+.nav {
+  display: flex; align-items: center; gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: none;
+}
+.nav-brand {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 18px; margin-right: auto;
+}
+.nav a { color: inherit; text-decoration: none; font-size: 14px; }
+.nav a:hover, .nav a[aria-current='page'] { color: var(--color-accent); }
+
+/* — tables — */
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table th {
+  text-align: left; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+  padding: var(--space-2); border-bottom: 1px solid var(--color-divider);
+}
+.table td {
+  padding: var(--space-2);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+}
+.table tbody tr:hover { background: color-mix(in srgb, var(--color-text) 4%, transparent); }
+
+/* — dialog — */
+.dialog-backdrop {
+  position: fixed; inset: 0; display: grid; place-items: center;
+  padding: var(--space-4);
+  background: color-mix(in srgb, var(--color-neutral-900) 50%, transparent);
+}
+.dialog {
+  width: min(440px, 100%); display: flex; flex-direction: column; gap: var(--space-3);
+  padding: var(--space-4); border-radius: var(--radius-lg);
+  background: var(--color-surface); box-shadow: var(--shadow-lg);
+}
+.dialog-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 20px;
+}
+.dialog-body { font-size: 14px; opacity: 0.85; }
+.dialog-actions { display: flex; justify-content: flex-end; gap: var(--space-2); margin-top: var(--space-2); }
+
+/* — blueprint frame: components are wireframe objects (see .blueprint
+     and .corner above) — square, transparent, hairline-bordered — */
+.card, .btn, .input, .tag, .seg, .dialog { border-radius: 0; }
+.card, .dialog { background: transparent; border: 1px solid var(--color-divider); }
+.btn { border: 1px solid var(--color-divider); }
+.btn-primary { border-color: var(--color-accent); }
+.btn-ghost { border-color: transparent; }
+
+</style>
+<script src="ec6b4d47-1850-494d-a662-c3ccda47dd89"></script>
+<script src="faadc2b7-8920-4e14-bd31-d5c6b1cbc0ca"></script>
+<style>
+  body { margin: 0; overflow-x: hidden; }
+  :root {
+    --color-accent: #1F32AB;
+    --color-accent-2: #1F32AB;
+    --color-accent-100: #EEF1FF;
+    --color-accent-200: #D8DEFC;
+    --color-accent-300: #B4BFF7;
+    --color-accent-400: #8593E8;
+    --color-accent-500: #4E62CE;
+    --color-accent-600: #1F32AB;
+    --color-accent-700: #1A2A8C;
+    --color-accent-800: #14206B;
+    --color-accent-900: #0D1745;
+    --color-accent-2-100: #EEF1FF;
+    --color-accent-2-200: #D8DEFC;
+    --color-accent-2-300: #B4BFF7;
+    --color-accent-2-400: #8593E8;
+    --color-accent-2-500: #4E62CE;
+    --color-accent-2-600: #1F32AB;
+    --color-accent-2-700: #1A2A8C;
+    --color-accent-2-800: #14206B;
+    --color-accent-2-900: #0D1745;
+  }
+  @keyframes dmg-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes dmg-flow { to { stroke-dashoffset: -240; } }
+  @keyframes dmg-pan { 0% { transform: scale(1.04) translate3d(0,0,0); } 100% { transform: scale(1.12) translate3d(-1.5%,-1%,0); } }
+  @media (min-width: 1024px) {
+    [data-desk="nav"], [data-desk="util"] { display: flex !important; }
+    [data-desk="burger"] { display: none !important; }
+  }
+  @media (max-width: 1023px) {
+    [data-cols="asym"] { grid-template-columns: 1fr !important; }
+    [data-cols="footer"] { grid-template-columns: repeat(2, 1fr) !important; }
+  }
+  @media (max-width: 720px) {
+    [data-bar-label] { display: none !important; }
+    [data-cols="footer"] { grid-template-columns: 1fr !important; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  }
+</style>
+</helmet>
+
+<div style="font-family:var(--font-body);background:var(--color-bg);color:var(--color-text);min-height:100vh">
+
+  <a href="#main" style="position:absolute;left:-9999px;top:0;padding:var(--space-2) var(--space-4);background:var(--color-accent-900);color:var(--color-bg);z-index:200" style-focus="left:0">Skip to content</a>
+
+  <div style="position:sticky;top:0;z-index:100">
+    <sc-if value="{{ showBar }}" hint-placeholder-val="{{ true }}">
+      <div style="background:#141F5C;color:rgba(242,242,243,0.78);border-bottom:1px solid rgba(242,242,243,0.10)">
+        <div style="max-width:1280px;margin:0 auto;padding:0 var(--space-6);height:34px;display:flex;align-items:center;gap:var(--space-6);font-size:12px;letter-spacing:0.06em">
+          <span style="font-family:var(--font-heading);letter-spacing:0.16em;text-transform:uppercase">TSXV: DMGI</span>
+          <span style="opacity:0.35">/</span>
+          <span style="font-family:var(--font-heading);letter-spacing:0.16em;text-transform:uppercase">OTCQB: DMGGF</span>
+          <span data-bar-label="" style="opacity:0.35;margin-left:auto">Latest</span>
+          <a href="#investors" style="color:var(--color-accent-300);text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:34px;margin-left:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" style-hover="color:#fff">{{ announcement }} <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </sc-if>
+
+    <header style="background:var(--color-accent-900);color:var(--color-bg);border-bottom:1px solid rgba(242,242,243,0.12)" sc-camel-on-mouse-leave="{{ closeMenu }}">
+      <div style="max-width:1280px;margin:0 auto;padding:0 var(--space-6);height:68px;display:flex;align-items:center;gap:var(--space-8)">
+        <a href="#main" aria-label="DMG Blockchain Solutions — home" style="display:flex;align-items:center;margin-right:auto">
+          <img src="5b070d9e-9a82-4903-8ece-d2f822c17788" alt="DMG Blockchain Solutions" style="height:26px;width:auto">
+        </a>
+
+        <nav aria-label="Primary" style="display:none;align-items:center;gap:var(--space-6)" data-desk="nav">
+          <button type="button" aria-expanded="false" aria-controls="mm-company" sc-camel-on-click="{{ toggleCompany }}" sc-camel-on-mouse-enter="{{ openCompany }}" sc-camel-on-focus="{{ openCompany }}" style="background:none;border:0;color:inherit;font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:15px;letter-spacing:0.02em;cursor:pointer;height:68px;padding:0;display:inline-flex;align-items:center;gap:5px" style-hover="color:var(--color-accent-300)">Company <span aria-hidden="true" style="font-size:9px;opacity:0.7">▼</span></button>
+          <button type="button" aria-expanded="false" aria-controls="mm-infra" sc-camel-on-click="{{ toggleInfra }}" sc-camel-on-mouse-enter="{{ openInfra }}" sc-camel-on-focus="{{ openInfra }}" style="background:none;border:0;color:inherit;font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:15px;letter-spacing:0.02em;cursor:pointer;height:68px;padding:0;display:inline-flex;align-items:center;gap:5px" style-hover="color:var(--color-accent-300)">Infrastructure <span aria-hidden="true" style="font-size:9px;opacity:0.7">▼</span></button>
+          <button type="button" aria-expanded="false" aria-controls="mm-plat" sc-camel-on-click="{{ togglePlat }}" sc-camel-on-mouse-enter="{{ openPlat }}" sc-camel-on-focus="{{ openPlat }}" style="background:none;border:0;color:inherit;font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:15px;letter-spacing:0.02em;cursor:pointer;height:68px;padding:0;display:inline-flex;align-items:center;gap:5px" style-hover="color:var(--color-accent-300)">Platforms <span aria-hidden="true" style="font-size:9px;opacity:0.7">▼</span></button>
+          <a href="#investors" sc-camel-on-mouse-enter="{{ closeMenu }}" style="color:inherit;text-decoration:none;font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:15px;letter-spacing:0.02em;display:inline-flex;align-items:center;height:68px" style-hover="color:var(--color-accent-300)">Investors</a>
+          <a href="#insights" sc-camel-on-mouse-enter="{{ closeMenu }}" style="color:inherit;text-decoration:none;font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:15px;letter-spacing:0.02em;display:inline-flex;align-items:center;height:68px" style-hover="color:var(--color-accent-300)">Insights</a>
+        </nav>
+
+        <div style="display:none;align-items:center;gap:var(--space-6)" data-desk="util">
+          <a href="https://www.blockseer.com" target="_blank" rel="noopener" style="color:rgba(242,242,243,0.66);text-decoration:none;font-size:13px" style-hover="color:#fff">Blockseer Explorer</a>
+          <a href="#contact" style="color:rgba(242,242,243,0.66);text-decoration:none;font-size:13px" style-hover="color:#fff">Contact</a>
+          <a href="#investors" class="btn btn-primary blueprint" style="background:var(--color-accent-500);border-color:var(--color-accent-400);color:#ffffff;min-height:40px;padding-inline:var(--space-4)">Investor Relations
+            <i class="corner tl" style="color:rgba(242,242,243,0.5)"></i><i class="corner tr" style="color:rgba(242,242,243,0.5)"></i><i class="corner bl" style="color:rgba(242,242,243,0.5)"></i><i class="corner br" style="color:rgba(242,242,243,0.5)"></i>
+          </a>
+        </div>
+
+        <button type="button" aria-label="Open menu" aria-expanded="false" sc-camel-on-click="{{ openMobile }}" data-desk="burger" style="background:none;border:1px solid rgba(242,242,243,0.24);color:inherit;width:44px;height:44px;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer">
+          <span aria-hidden="true" style="display:block;width:18px;height:1px;background:currentColor"></span>
+          <span aria-hidden="true" style="display:block;width:18px;height:1px;background:currentColor"></span>
+          <span aria-hidden="true" style="display:block;width:18px;height:1px;background:currentColor"></span>
+        </button>
+      </div>
+
+      <sc-if value="{{ isCompany }}" hint-placeholder-val="{{ false }}">
+        <div id="mm-company" style="border-top:1px solid rgba(242,242,243,0.12);background:#141F5C;animation:dmg-rise 0.22s ease both">
+          <div style="max-width:1280px;margin:0 auto;padding:var(--space-8) var(--space-6);display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:var(--space-8)">
+            <div>
+              <p style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-300);margin:0 0 var(--space-3)">Company</p>
+              <p style="font-size:15px;color:rgba(242,242,243,0.72);max-width:30ch;margin:0">A Canadian digital infrastructure company operating data centers and blockchain software since 2017.</p>
+            </div>
+            <ul style="list-style:none;margin:0;padding:0;display:grid;gap:var(--space-3)">
+              <li><a href="#positioning" style="color:var(--color-bg);text-decoration:none;font-size:15px;display:block;padding:6px 0" style-hover="color:var(--color-accent-300)">About DMG</a></li>
+              <li><a href="#positioning" style="color:var(--color-bg);text-decoration:none;font-size:15px;display:block;padding:6px 0" style-hover="color:var(--color-accent-300)">Leadership</a></li>
+            </ul>
+            <ul style="list-style:none;margin:0;padding:0;display:grid;gap:var(--space-3)">
+              <li><a href="#narrative" style="color:var(--color-bg);text-decoration:none;font-size:15px;display:block;padding:6px 0" style-hover="color:var(--color-accent-300)">Sustainability</a></li>
+              <li><a href="#contact" style="color:var(--color-bg);text-decoration:none;font-size:15px;display:block;padding:6px 0" style-hover="color:var(--color-accent-300)">Careers</a></li>
+            </ul>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isInfra }}" hint-placeholder-val="{{ false }}">
+        <div id="mm-infra" style="border-top:1px solid rgba(242,242,243,0.12);background:#141F5C;animation:dmg-rise 0.22s ease both">
+          <div style="max-width:1280px;margin:0 auto;padding:var(--space-8) var(--space-6);display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:var(--space-8)">
+            <div>
+              <p style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-300);margin:0 0 var(--space-3)">Infrastructure</p>
+              <p style="font-size:15px;color:rgba(242,242,243,0.72);max-width:30ch;margin:0">Owned and operated compute capacity, sited where transmission-grade power and cool climate meet.</p>
+            </div>
+            <ul style="list-style:none;margin:0;padding:0;display:grid;gap:var(--space-3)">
+              <li><a href="#spotlight" style="color:var(--color-bg);text-decoration:none;font-size:15px;display:block;padding:6px 0" style-hover="color:var(--color-accent-300)">Christina Lake Campus</a></li>
+              <li><a href="#infrastructure" style="color:var(--color-bg);text-decoration:none;font-size:15px;display:block;padding:6px 0" style-hover="color:var(--color-accent-300)">AI and HPC Infrastructure</a></li>
+              <li><a href="#infrastructure" style="color:var(--color-bg);text-decoration:none;font-size:15px;display:block;padding:6px 0" style-hover="color:var(--color-accent-300)">Bitcoin Mining</a></li>
+            </ul>
+            <ul style="list-style:none;margin:0;padding:0;display:grid;gap:var(--space-3)">
+              <li><a href="#infrastructure" style="color:var(--color-bg);text-decoration:none;font-size:15px;display:block;padding:6px 0" style-hover="color:var(--color-accent-300)">Colocation</a></li>
+              <li><a href="#narrative" style="color:var(--color-bg);text-decoration:none;font-size:15px;display:block;padding:6px 0" style-hover="color:var(--color-accent-300)">Energy Strategy</a></li>
+            </ul>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isPlat }}" hint-placeholder-val="{{ false }}">
+        <div id="mm-plat" style="border-top:1px solid rgba(242,242,243,0.12);background:#141F5C;animation:dmg-rise 0.22s ease both">
+          <div style="max-width:1280px;margin:0 auto;padding:var(--space-8) var(--space-6);display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:var(--space-8)">
+            <div>
+              <p style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-300);margin:0 0 var(--space-3)">Platforms</p>
+              <p style="font-size:15px;color:rgba(242,242,243,0.72);max-width:30ch;margin:0">Software and transaction infrastructure built on top of the compute DMG operates.</p>
+            </div>
+            <ul style="list-style:none;margin:0;padding:0;display:grid;gap:var(--space-3)">
+              <li><a href="#platforms" style="color:var(--color-bg);text-decoration:none;font-size:15px;display:block;padding:6px 0" style-hover="color:var(--color-accent-300)">Blockseer</a></li>
+              <li><a href="#platforms" style="color:var(--color-bg);text-decoration:none;font-size:15px;display:block;padding:6px 0" style-hover="color:var(--color-accent-300)">Terra Pool</a></li>
+            </ul>
+            <ul style="list-style:none;margin:0;padding:0;display:grid;gap:var(--space-3)">
+              <li><a href="#platforms" style="color:var(--color-bg);text-decoration:none;font-size:15px;display:block;padding:6px 0" style-hover="color:var(--color-accent-300)">Reactor</a></li>
+              <li><a href="#platforms" style="color:var(--color-bg);text-decoration:none;font-size:15px;display:block;padding:6px 0" style-hover="color:var(--color-accent-300)">Institutional Digital Assets</a></li>
+            </ul>
+          </div>
+        </div>
+      </sc-if>
+    </header>
+  </div>
+
+  <sc-if value="{{ mobileOpen }}" hint-placeholder-val="{{ false }}">
+    <div role="dialog" aria-modal="true" aria-label="Site menu" style="position:fixed;inset:0;z-index:150;background:var(--color-accent-900);color:var(--color-bg);overflow-y:auto;animation:dmg-rise 0.2s ease both">
+      <div style="display:flex;align-items:center;padding:var(--space-4) var(--space-6);border-bottom:1px solid rgba(242,242,243,0.12)">
+        <img src="5b070d9e-9a82-4903-8ece-d2f822c17788" alt="DMG Blockchain Solutions" style="height:24px;width:auto;margin-right:auto">
+        <button type="button" aria-label="Close menu" sc-camel-on-click="{{ closeMobile }}" style="background:none;border:1px solid rgba(242,242,243,0.24);color:inherit;width:44px;height:44px;font-size:20px;line-height:1;cursor:pointer">×</button>
+      </div>
+      <div style="padding:var(--space-6) var(--space-6) calc(var(--space-8) * 2)">
+        <p style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-300);margin:var(--space-4) 0 var(--space-2)">Company</p>
+        <a href="#positioning" sc-camel-on-click="{{ closeMobile }}" style="display:block;padding:12px 0;color:var(--color-bg);text-decoration:none;font-family:var(--font-heading);font-size:24px;border-bottom:1px solid rgba(242,242,243,0.10)">About DMG</a>
+        <a href="#positioning" sc-camel-on-click="{{ closeMobile }}" style="display:block;padding:12px 0;color:var(--color-bg);text-decoration:none;font-family:var(--font-heading);font-size:24px;border-bottom:1px solid rgba(242,242,243,0.10)">Leadership</a>
+        <a href="#contact" sc-camel-on-click="{{ closeMobile }}" style="display:block;padding:12px 0;color:var(--color-bg);text-decoration:none;font-family:var(--font-heading);font-size:24px;border-bottom:1px solid rgba(242,242,243,0.10)">Careers</a>
+        <p style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-300);margin:var(--space-8) 0 var(--space-2)">Infrastructure</p>
+        <a href="#spotlight" sc-camel-on-click="{{ closeMobile }}" style="display:block;padding:12px 0;color:var(--color-bg);text-decoration:none;font-family:var(--font-heading);font-size:24px;border-bottom:1px solid rgba(242,242,243,0.10)">Christina Lake Campus</a>
+        <a href="#infrastructure" sc-camel-on-click="{{ closeMobile }}" style="display:block;padding:12px 0;color:var(--color-bg);text-decoration:none;font-family:var(--font-heading);font-size:24px;border-bottom:1px solid rgba(242,242,243,0.10)">AI and HPC</a>
+        <a href="#infrastructure" sc-camel-on-click="{{ closeMobile }}" style="display:block;padding:12px 0;color:var(--color-bg);text-decoration:none;font-family:var(--font-heading);font-size:24px;border-bottom:1px solid rgba(242,242,243,0.10)">Bitcoin Mining and Colocation</a>
+        <p style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-300);margin:var(--space-8) 0 var(--space-2)">Platforms</p>
+        <a href="#platforms" sc-camel-on-click="{{ closeMobile }}" style="display:block;padding:12px 0;color:var(--color-bg);text-decoration:none;font-family:var(--font-heading);font-size:24px;border-bottom:1px solid rgba(242,242,243,0.10)">Blockseer</a>
+        <a href="#platforms" sc-camel-on-click="{{ closeMobile }}" style="display:block;padding:12px 0;color:var(--color-bg);text-decoration:none;font-family:var(--font-heading);font-size:24px;border-bottom:1px solid rgba(242,242,243,0.10)">Terra Pool</a>
+        <a href="#platforms" sc-camel-on-click="{{ closeMobile }}" style="display:block;padding:12px 0;color:var(--color-bg);text-decoration:none;font-family:var(--font-heading);font-size:24px;border-bottom:1px solid rgba(242,242,243,0.10)">Reactor</a>
+        <a href="#platforms" sc-camel-on-click="{{ closeMobile }}" style="display:block;padding:12px 0;color:var(--color-bg);text-decoration:none;font-family:var(--font-heading);font-size:24px;border-bottom:1px solid rgba(242,242,243,0.10)">Institutional Digital Assets</a>
+        <p style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-300);margin:var(--space-8) 0 var(--space-2)">More</p>
+        <a href="#investors" sc-camel-on-click="{{ closeMobile }}" style="display:block;padding:12px 0;color:var(--color-bg);text-decoration:none;font-family:var(--font-heading);font-size:24px;border-bottom:1px solid rgba(242,242,243,0.10)">Investors</a>
+        <a href="#insights" sc-camel-on-click="{{ closeMobile }}" style="display:block;padding:12px 0;color:var(--color-bg);text-decoration:none;font-family:var(--font-heading);font-size:24px;border-bottom:1px solid rgba(242,242,243,0.10)">Insights</a>
+        <a href="#contact" sc-camel-on-click="{{ closeMobile }}" style="display:block;padding:12px 0;color:var(--color-bg);text-decoration:none;font-family:var(--font-heading);font-size:24px;border-bottom:1px solid rgba(242,242,243,0.10)">Contact</a>
+        <a href="#investors" sc-camel-on-click="{{ closeMobile }}" class="btn btn-primary" style="margin-top:var(--space-8);min-height:48px;background:var(--color-accent-500);border-color:var(--color-accent-400);color:#ffffff;width:100%">Investor Relations</a>
+        <p style="margin-top:var(--space-6);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-family:var(--font-heading);color:rgba(242,242,243,0.55)">TSXV: DMGI &nbsp;/&nbsp; OTCQB: DMGGF</p>
+      </div>
+    </div>
+  </sc-if>
+
+  <main id="main">
+
+    <section aria-labelledby="hero-h" style="position:relative;background:var(--color-accent-900);color:var(--color-bg);overflow:hidden;border-bottom:1px solid rgba(242,242,243,0.12)">
+      <div aria-hidden="true" style="position:absolute;top:0;bottom:0;right:0;width:56%;opacity:0.9">
+        <svg sc-camel-view-box="0 0 820 720" sc-camel-preserve-aspect-ratio="xMidYMid slice" style="width:100%;height:100%">
+          <g fill="none" stroke="rgba(133,147,232,0.28)" stroke-width="1">
+            <path d="M60 640 C 180 560, 140 470, 300 430 S 560 380, 660 300 S 760 170, 820 150"></path>
+            <path d="M20 690 C 170 620, 150 520, 320 480 S 600 430, 700 340 S 800 210, 860 190"></path>
+            <path d="M120 590 C 220 520, 190 440, 330 400 S 540 340, 640 260 S 740 140, 800 120"></path>
+          </g>
+          <g transform="translate(360 300)">
+            <g fill="none" stroke="#8593E8" stroke-width="1">
+              <path d="M0 120 L180 60 L360 120 L180 180 Z"></path>
+              <path d="M0 120 L0 84 L180 24 L360 84 L360 120 M180 180 L180 144 M0 84 L180 144 L360 84"></path>
+              <path d="M60 140 L60 112 M120 160 L120 132 M240 160 L240 132 M300 140 L300 112" opacity="0.7"></path>
+              <rect x="404" y="52" width="64" height="64"></rect>
+              <path d="M404 84 H468 M436 52 V116 M360 96 L404 84" opacity="0.8"></path>
+            </g>
+            <g font-family="Barlow Condensed" font-size="11" letter-spacing="2" fill="rgba(242,242,243,0.62)">
+              <text x="0" y="216">COMPUTE HALLS</text>
+              <text x="404" y="140">SUBSTATION</text>
+            </g>
+            <g fill="none" stroke="#8593E8" stroke-width="1" stroke-dasharray="6 150">
+              <path d="M468 84 L680 84 L740 24" style="animation:dmg-flow 12s linear infinite"></path>
+              <path d="M180 180 L180 300 L60 380" style="animation:dmg-flow 16s linear infinite"></path>
+            </g>
+            <g fill="#8593E8">
+              <circle cx="468" cy="84" r="3"></circle><circle cx="180" cy="180" r="3"></circle><circle cx="0" cy="120" r="3"></circle><circle cx="360" cy="120" r="3"></circle>
+            </g>
+            <text x="510" y="72" font-family="Barlow Condensed" font-size="11" letter-spacing="2" fill="rgba(242,242,243,0.62)">TRANSMISSION</text>
+          </g>
+          <g font-family="Barlow Condensed" font-size="10" letter-spacing="2" fill="rgba(133,147,232,0.55)">
+            <text x="620" y="660">49.05° N &nbsp; 118.22° W</text>
+            <text x="620" y="678">CHRISTINA LAKE, BC</text>
+          </g>
+        </svg>
+      </div>
+      <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg,#0D1745 0%,rgba(13,23,69,0.92) 40%,rgba(13,23,69,0.25) 100%)"></div>
+      <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(rgba(133,147,232,0.10) 1px,transparent 1px),linear-gradient(90deg,rgba(133,147,232,0.10) 1px,transparent 1px);background-size:96px 96px"></div>
+      <div aria-hidden="true" style="position:absolute;inset:0">
+        <svg sc-camel-view-box="0 0 1440 720" sc-camel-preserve-aspect-ratio="none" style="width:100%;height:100%">
+          <g fill="none" stroke="#8593E8" stroke-width="1" opacity="0.5">
+            <path d="M0 604 L318 604 L392 540 L742 540 L818 468 L1440 468" stroke-dasharray="8 220" style="animation:dmg-flow 14s linear infinite"></path>
+            <path d="M0 660 L470 660 L540 596 L1080 596 L1160 528 L1440 528" stroke-dasharray="8 260" style="animation:dmg-flow 19s linear infinite"></path>
+          </g>
+        </svg>
+      </div>
+
+      <div style="position:relative;max-width:1280px;margin:0 auto;padding:calc(var(--space-8) * 3.6) var(--space-6) calc(var(--space-8) * 3.2)">
+        <p style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:var(--color-accent-300);margin:0 0 var(--space-6);animation:dmg-rise 0.7s ease both">Canadian Digital Infrastructure</p>
+        <h1 id="hero-h" style="font-size:clamp(42px,6.2vw,84px);line-height:0.98;letter-spacing:-0.02em;margin:0;max-width:19ch;text-wrap:balance;animation:dmg-rise 0.7s 0.06s ease both">Powering sovereign compute and trusted digital assets.</h1>
+        <p style="margin:var(--space-8) 0 0;max-width:56ch;font-size:18px;line-height:1.6;color:rgba(242,242,243,0.80);text-wrap:pretty;animation:dmg-rise 0.7s 0.12s ease both">DMG develops and operates energy-efficient data centers and vertically integrated software platforms for AI, Bitcoin and institutional digital finance.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-4);margin-top:calc(var(--space-8) * 1.4);animation:dmg-rise 0.7s 0.18s ease both">
+          <a href="#infrastructure" class="btn btn-primary blueprint" style="background:var(--color-accent-500);border-color:var(--color-accent-400);color:#ffffff;min-height:52px;padding-inline:var(--space-8);font-size:15px">Explore Our Infrastructure
+            <i class="corner tl" style="color:rgba(242,242,243,0.55)"></i><i class="corner tr" style="color:rgba(242,242,243,0.55)"></i><i class="corner bl" style="color:rgba(242,242,243,0.55)"></i><i class="corner br" style="color:rgba(242,242,243,0.55)"></i>
+          </a>
+          <a href="#investors" class="btn btn-secondary" style="border-color:rgba(242,242,243,0.34);color:var(--color-bg);min-height:52px;padding-inline:var(--space-8);font-size:15px">Investor Relations</a>
+        </div>
+        <p style="margin:calc(var(--space-8) * 1.6) 0 0;font-family:var(--font-heading);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(242,242,243,0.58)">TSXV: DMGI &nbsp;·&nbsp; OTCQB: DMGGF</p>
+      </div>
+    </section>
+
+    <section aria-label="Company credentials" style="background:var(--color-accent-100);border-bottom:1px solid var(--color-divider)">
+      <div style="max-width:1280px;margin:0 auto;padding:var(--space-6);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:var(--space-6)" data-reveal="">
+        <div style="display:grid;gap:2px"><span style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-accent-700)">Listed</span><span style="font-size:14px">Publicly traded in Canada</span></div>
+        <div style="display:grid;gap:2px"><span style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-accent-700)">Ownership</span><span style="font-size:14px">Canadian-owned infrastructure</span></div>
+        <div style="display:grid;gap:2px"><span style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-accent-700)">Operations</span><span style="font-size:14px">Energy-efficient by design</span></div>
+        <div style="display:grid;gap:2px"><span style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-accent-700)">Model</span><span style="font-size:14px">Vertically integrated technology</span></div>
+        <div style="display:grid;gap:2px"><span style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-accent-700)">History</span><span style="font-size:14px">Established operating record</span></div>
+      </div>
+    </section>
+
+    <section id="positioning" aria-labelledby="pos-h" style="padding:calc(var(--space-8) * 3.4) 0">
+      <div style="max-width:1280px;margin:0 auto;padding:0 var(--space-6)">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:var(--space-8);align-items:end;margin-bottom:calc(var(--space-8) * 2)" data-reveal="">
+          <div>
+            <p style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:var(--color-accent-700);margin:0 0 var(--space-4)">Positioning</p>
+            <h2 id="pos-h" style="font-size:clamp(32px,3.6vw,50px);line-height:1.02;margin:0;max-width:22ch;text-wrap:balance">One company. Two connected engines of growth.</h2>
+          </div>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:var(--color-neutral-800);max-width:52ch;text-wrap:pretty">DMG combines physical infrastructure with proprietary software and regulated digital-asset capabilities. This vertical integration allows the company to participate across the full digital infrastructure value chain.</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:var(--space-8)" data-cols="asym">
+          <article id="infrastructure" class="card blueprint" style="padding:0;gap:0;overflow:hidden">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <div style="height:320px;border-bottom:1px solid var(--color-divider);background:var(--color-accent-900);overflow:hidden">
+              <svg sc-camel-view-box="0 0 480 320" style="width:100%;height:100%" role="img" aria-label="Diagram: cross-section of a high-density compute hall, from power intake to liquid-cooled racks.">
+                <g fill="none" stroke="rgba(133,147,232,0.22)" stroke-width="1">
+                  <path d="M0 64H480M0 128H480M0 192H480M0 256H480M96 0V320M192 0V320M288 0V320M384 0V320"></path>
+                </g>
+                <g fill="none" stroke="#8593E8" stroke-width="1">
+                  <rect x="48" y="220" width="72" height="56"></rect>
+                  <path d="M56 276V236h12v40M76 276V236h12v40M96 276V236h12v40"></path>
+                  <rect x="168" y="196" width="144" height="80"></rect>
+                  <path d="M184 276V212M208 276V212M232 276V212M256 276V212M280 276V212M296 276V212"></path>
+                  <path d="M168 236H312" opacity="0.7"></path>
+                  <rect x="360" y="220" width="72" height="56"></rect>
+                  <circle cx="396" cy="248" r="16"></circle>
+                  <path d="M396 232v-8M396 272v-8"></path>
+                </g>
+                <g fill="none" stroke="#8593E8" stroke-width="1" stroke-dasharray="5 120">
+                  <path d="M120 248 H168" style="animation:dmg-flow 8s linear infinite"></path>
+                  <path d="M312 248 H360" style="animation:dmg-flow 10s linear infinite"></path>
+                  <path d="M240 196 V96 H420 V220" style="animation:dmg-flow 14s linear infinite"></path>
+                </g>
+                <g font-family="Barlow Condensed" font-size="11" letter-spacing="2" fill="rgba(242,242,243,0.62)">
+                  <text x="48" y="300">POWER INTAKE</text>
+                  <text x="168" y="300">LIQUID-COOLED RACKS</text>
+                  <text x="360" y="300">HEAT REJECTION</text>
+                  <text x="48" y="40">COMPUTE HALL — SECTION A-A</text>
+                </g>
+              </svg>
+            </div>
+            <div style="padding:var(--space-8)">
+              <p style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700);margin:0 0 var(--space-4)">Core — Data Center Infrastructure</p>
+              <h3 style="font-size:30px;line-height:1.06;margin:0 0 var(--space-4);max-width:24ch">Infrastructure engineered for high-density compute.</h3>
+              <p style="font-size:16px;color:var(--color-neutral-800);max-width:58ch;margin:0 0 var(--space-6);text-wrap:pretty">DMG designs, builds and operates its own sites. Transmission-grade power, a cool northern climate and liquid-cooling capability let the same campus serve AI training, high-performance computing, colocation tenants and Bitcoin mining.</p>
+              <ul style="list-style:none;margin:0 0 var(--space-8);padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--space-2) var(--space-6);border-top:1px solid var(--color-divider);padding-top:var(--space-4)">
+                <li style="font-size:14px;padding:4px 0;border-bottom:1px solid var(--color-divider)">Christina Lake campus</li>
+                <li style="font-size:14px;padding:4px 0;border-bottom:1px solid var(--color-divider)">Transmission-grade energy access</li>
+                <li style="font-size:14px;padding:4px 0;border-bottom:1px solid var(--color-divider)">High-density compute halls</li>
+                <li style="font-size:14px;padding:4px 0;border-bottom:1px solid var(--color-divider)">Liquid-cooling capability</li>
+                <li style="font-size:14px;padding:4px 0;border-bottom:1px solid var(--color-divider)">AI and HPC colocation</li>
+                <li style="font-size:14px;padding:4px 0;border-bottom:1px solid var(--color-divider)">Bitcoin-mining operations</li>
+              </ul>
+              <a href="#spotlight" class="btn btn-secondary" style="min-height:46px;padding-inline:var(--space-6)">Explore Infrastructure <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article id="platforms-intro" class="card blueprint" style="padding:0;gap:0;overflow:hidden">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <div style="height:320px;border-bottom:1px solid var(--color-divider);background:var(--color-accent-900);position:relative;overflow:hidden">
+              <svg sc-camel-view-box="0 0 480 320" style="width:100%;height:100%" role="img" aria-label="Diagram: DMG platforms layered above the compute and energy layers of the campus.">
+                <g fill="none" stroke="rgba(133,147,232,0.30)" stroke-width="1">
+                  <path d="M0 80H480M0 160H480M0 240H480"></path>
+                </g>
+                <g font-family="Barlow Condensed" font-size="11" letter-spacing="2" fill="#8593E8">
+                  <text x="24" y="52">SOFTWARE LAYER</text>
+                  <text x="24" y="132">TRANSACTION LAYER</text>
+                  <text x="24" y="212">COMPUTE LAYER</text>
+                  <text x="24" y="292">ENERGY LAYER</text>
+                </g>
+                <g fill="none" stroke="#8593E8" stroke-width="1">
+                  <rect x="176" y="24" width="120" height="34"></rect>
+                  <rect x="312" y="24" width="120" height="34"></rect>
+                  <rect x="176" y="104" width="120" height="34"></rect>
+                  <rect x="312" y="104" width="120" height="34"></rect>
+                  <rect x="176" y="184" width="256" height="34"></rect>
+                  <rect x="176" y="264" width="256" height="34"></rect>
+                </g>
+                <g font-family="Barlow Condensed" font-size="13" fill="#f2f2f3">
+                  <text x="188" y="46">Blockseer</text>
+                  <text x="324" y="46">Reactor</text>
+                  <text x="188" y="126">Terra Pool</text>
+                  <text x="324" y="126">Digital assets</text>
+                  <text x="188" y="206">DMG data centers</text>
+                  <text x="188" y="286">Grid and hydro power</text>
+                </g>
+                <g fill="none" stroke="#8593E8" stroke-width="1" stroke-dasharray="4 140" opacity="0.9">
+                  <path d="M236 264V58" style="animation:dmg-flow 11s linear infinite"></path>
+                  <path d="M372 264V58" style="animation:dmg-flow 15s linear infinite"></path>
+                </g>
+              </svg>
+            </div>
+            <div style="padding:var(--space-8)">
+              <p style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700);margin:0 0 var(--space-4)">Core+ — Software and Services</p>
+              <h3 style="font-size:30px;line-height:1.06;margin:0 0 var(--space-4);max-width:22ch">Software and services built on blockchain infrastructure.</h3>
+              <p style="font-size:16px;color:var(--color-neutral-800);margin:0 0 var(--space-6);text-wrap:pretty">Analytics, mining services and institutional digital-asset capability run on the compute DMG already owns — proprietary technology rather than resold capacity.</p>
+              <ul style="list-style:none;margin:0 0 var(--space-8);padding:var(--space-4) 0 0;display:grid;gap:var(--space-2);border-top:1px solid var(--color-divider)">
+                <li style="font-size:14px;padding:4px 0;border-bottom:1px solid var(--color-divider)">Blockchain analytics and infrastructure</li>
+                <li style="font-size:14px;padding:4px 0;border-bottom:1px solid var(--color-divider)">Carbon-conscious Bitcoin products</li>
+                <li style="font-size:14px;padding:4px 0;border-bottom:1px solid var(--color-divider)">Hashrate and mining services</li>
+                <li style="font-size:14px;padding:4px 0;border-bottom:1px solid var(--color-divider)">Institutional digital-asset services</li>
+                <li style="font-size:14px;padding:4px 0;border-bottom:1px solid var(--color-divider)">Compliance-focused technology</li>
+              </ul>
+              <a href="#platforms" class="btn btn-secondary" style="min-height:46px;padding-inline:var(--space-6)">Explore Platforms <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="spotlight" aria-labelledby="spot-h" style="background:var(--color-accent-900);color:var(--color-bg);padding:calc(var(--space-8) * 3.4) 0;position:relative;overflow:hidden">
+      <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(rgba(133,147,232,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(133,147,232,0.07) 1px,transparent 1px);background-size:120px 120px"></div>
+      <div style="position:relative;max-width:1280px;margin:0 auto;padding:0 var(--space-6)">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:var(--space-8);align-items:end;margin-bottom:calc(var(--space-8) * 1.8)" data-reveal="">
+          <div>
+            <p style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:var(--color-accent-300);margin:0 0 var(--space-4)">Infrastructure Spotlight — Christina Lake, British Columbia</p>
+            <h2 id="spot-h" style="font-size:clamp(32px,3.6vw,50px);line-height:1.02;margin:0;max-width:20ch;text-wrap:balance">Built where power, security and scale converge.</h2>
+          </div>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:rgba(242,242,243,0.78);max-width:50ch;text-wrap:pretty">A single owned campus with direct energy access, cold-climate cooling advantage and room to expand — the reason DMG can commit capacity to compute-intensive customers on a defined timeline.</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:var(--space-8)" data-cols="asym">
+          <figure class="blueprint" style="margin:0;background:#141F5C">
+            <i class="corner tl" style="color:rgba(242,242,243,0.5)"></i><i class="corner tr" style="color:rgba(242,242,243,0.5)"></i><i class="corner bl" style="color:rgba(242,242,243,0.5)"></i><i class="corner br" style="color:rgba(242,242,243,0.5)"></i>
+            <div class="duotone" style="height:440px">
+              <image-slot id="dmg-campus" shape="rect" placeholder="CAMPUS PLATE — Christina Lake site, aerial oblique. Full site in frame: buildings, substation, access road, surrounding terrain. Drop your facility photograph here." src="3406ad21-4a0f-4b01-b494-27f1ea20d112"></image-slot>
+            </div>
+            <figcaption style="padding:var(--space-3) var(--space-4);color:rgba(242,242,243,0.6);border-top:1px solid rgba(242,242,243,0.12)">Christina Lake campus, British Columbia.</figcaption>
+          </figure>
+
+          <div style="display:grid;gap:var(--space-4);align-content:start">
+            <div class="blueprint" style="padding:var(--space-6);background:#141F5C">
+              <i class="corner tl" style="color:rgba(242,242,243,0.5)"></i><i class="corner tr" style="color:rgba(242,242,243,0.5)"></i><i class="corner bl" style="color:rgba(242,242,243,0.5)"></i><i class="corner br" style="color:rgba(242,242,243,0.5)"></i>
+              <p style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-300);margin:0 0 var(--space-4)">Site profile</p>
+              <dl style="margin:0;display:grid;gap:0">
+                <div style="display:flex;justify-content:space-between;gap:var(--space-4);padding:var(--space-2) 0;border-bottom:1px solid rgba(242,242,243,0.12)"><dt style="font-size:14px;color:rgba(242,242,243,0.72)">Current campus capacity</dt><dd style="margin:0;font-family:var(--font-heading);font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent-300)">To confirm</dd></div>
+                <div style="display:flex;justify-content:space-between;gap:var(--space-4);padding:var(--space-2) 0;border-bottom:1px solid rgba(242,242,243,0.12)"><dt style="font-size:14px;color:rgba(242,242,243,0.72)">Approved power</dt><dd style="margin:0;font-family:var(--font-heading);font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent-300)">To confirm</dd></div>
+                <div style="display:flex;justify-content:space-between;gap:var(--space-4);padding:var(--space-2) 0;border-bottom:1px solid rgba(242,242,243,0.12)"><dt style="font-size:14px;color:rgba(242,242,243,0.72)">Site footprint</dt><dd style="margin:0;font-family:var(--font-heading);font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent-300)">To confirm</dd></div>
+                <div style="display:flex;justify-content:space-between;gap:var(--space-4);padding:var(--space-2) 0;border-bottom:1px solid rgba(242,242,243,0.12)"><dt style="font-size:14px;color:rgba(242,242,243,0.72)">Cooling technology</dt><dd style="margin:0;font-family:var(--font-heading);font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent-300)">To confirm</dd></div>
+                <div style="display:flex;justify-content:space-between;gap:var(--space-4);padding:var(--space-2) 0"><dt style="font-size:14px;color:rgba(242,242,243,0.72)">Renewable profile</dt><dd style="margin:0;font-family:var(--font-heading);font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent-300)">To confirm</dd></div>
+              </dl>
+              <p style="margin:var(--space-4) 0 0;font-size:12px;color:rgba(242,242,243,0.5)">CMS statistic fields. Values publish only once verified by DMG.</p>
+            </div>
+
+            <details style="border:1px solid rgba(242,242,243,0.18);padding:var(--space-4) var(--space-6)">
+              <summary style="cursor:pointer;font-family:var(--font-heading);font-size:17px;letter-spacing:0.01em;min-height:32px;display:flex;align-items:center">Power and interconnection</summary>
+              <p style="margin:var(--space-3) 0 0;font-size:14px;color:rgba(242,242,243,0.74)">Describe the interconnection arrangement, substation configuration and available headroom. Content pending DMG confirmation.</p>
+            </details>
+            <details style="border:1px solid rgba(242,242,243,0.18);padding:var(--space-4) var(--space-6)">
+              <summary style="cursor:pointer;font-family:var(--font-heading);font-size:17px;letter-spacing:0.01em;min-height:32px;display:flex;align-items:center">Cooling and density</summary>
+              <p style="margin:var(--space-3) 0 0;font-size:14px;color:rgba(242,242,243,0.74)">Describe air, immersion and direct-to-chip capability, rack density supported and climate advantage. Content pending DMG confirmation.</p>
+            </details>
+            <details style="border:1px solid rgba(242,242,243,0.18);padding:var(--space-4) var(--space-6)">
+              <summary style="cursor:pointer;font-family:var(--font-heading);font-size:17px;letter-spacing:0.01em;min-height:32px;display:flex;align-items:center">Security and operations</summary>
+              <p style="margin:var(--space-3) 0 0;font-size:14px;color:rgba(242,242,243,0.74)">Describe physical security, monitoring, staffing model and certification status. Reference SOC 2 Type II only where legally approved.</p>
+            </details>
+            <a href="#contact" class="btn btn-primary blueprint" style="background:var(--color-accent-500);border-color:var(--color-accent-400);color:#ffffff;min-height:48px">Full infrastructure overview
+              <i class="corner tl" style="color:rgba(242,242,243,0.55)"></i><i class="corner tr" style="color:rgba(242,242,243,0.55)"></i><i class="corner bl" style="color:rgba(242,242,243,0.55)"></i><i class="corner br" style="color:rgba(242,242,243,0.55)"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="platforms" aria-labelledby="plat-h" style="padding:calc(var(--space-8) * 3.4) 0">
+      <div style="max-width:1280px;margin:0 auto;padding:0 var(--space-6)">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:var(--space-8);align-items:end;margin-bottom:calc(var(--space-8) * 1.8)" data-reveal="">
+          <div>
+            <p style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:var(--color-accent-700);margin:0 0 var(--space-4)">Platforms</p>
+            <h2 id="plat-h" style="font-size:clamp(32px,3.6vw,50px);line-height:1.02;margin:0;max-width:22ch;text-wrap:balance">An integrated digital infrastructure ecosystem.</h2>
+          </div>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:var(--color-neutral-800);max-width:50ch;text-wrap:pretty">Each platform sits on a different layer of the same stack. Names, descriptions and status are CMS-controlled; some are subject to brand approval.</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:var(--space-6)">
+          <article class="card blueprint" style="padding:var(--space-6);gap:var(--space-3)" data-reveal="">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <span style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700)">Software layer</span>
+            <h3 style="font-size:26px;margin:0">Blockseer</h3>
+            <p style="margin:0;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;font-family:var(--font-heading);color:var(--color-neutral-700)">Blockchain intelligence and infrastructure</p>
+            <p style="margin:0;font-size:15px;color:var(--color-neutral-800);flex:1">Transaction analytics and explorer tooling used to trace provenance and support compliance workflows on public chains.</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);border-top:1px solid var(--color-divider);padding-top:var(--space-3)">
+              <span class="tag tag-accent">Operating</span>
+              <a href="https://www.blockseer.com" target="_blank" rel="noopener" style="font-size:14px;text-decoration:none;color:var(--color-accent-700)" style-hover="color:var(--color-accent-900)">Open explorer <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="card blueprint" style="padding:var(--space-6);gap:var(--space-3)" data-reveal="">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <span style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700)">Transaction layer</span>
+            <h3 style="font-size:26px;margin:0">Terra Pool</h3>
+            <p style="margin:0;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;font-family:var(--font-heading);color:var(--color-neutral-700)">Sustainable Bitcoin infrastructure</p>
+            <p style="margin:0;font-size:15px;color:var(--color-neutral-800);flex:1">A mining pool built around participants using clean and lower-carbon energy sources, with reporting designed for institutional scrutiny.</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);border-top:1px solid var(--color-divider);padding-top:var(--space-3)">
+              <span class="tag tag-accent">Operating</span>
+              <a href="#contact" style="font-size:14px;text-decoration:none;color:var(--color-accent-700)" style-hover="color:var(--color-accent-900)">Learn more <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="card blueprint" style="padding:var(--space-6);gap:var(--space-3)" data-reveal="">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <span style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700)">Compute layer</span>
+            <h3 style="font-size:26px;margin:0">Reactor</h3>
+            <p style="margin:0;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;font-family:var(--font-heading);color:var(--color-neutral-700)">Hashrate products</p>
+            <p style="margin:0;font-size:15px;color:var(--color-neutral-800);flex:1">Productised access to mining capacity operated by DMG, giving partners exposure to hashrate without operating their own sites.</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);border-top:1px solid var(--color-divider);padding-top:var(--space-3)">
+              <span class="tag tag-accent">Operating</span>
+              <a href="#contact" style="font-size:14px;text-decoration:none;color:var(--color-accent-700)" style-hover="color:var(--color-accent-900)">Learn more <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="card blueprint" style="padding:var(--space-6);gap:var(--space-3)" data-reveal="">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <span style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700)">Services layer</span>
+            <h3 style="font-size:26px;margin:0">Institutional Digital Assets</h3>
+            <p style="margin:0;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;font-family:var(--font-heading);color:var(--color-neutral-700)">Regulated digital-asset services</p>
+            <p style="margin:0;font-size:15px;color:var(--color-neutral-800);flex:1">Custody, settlement and compliance capability for institutions, built on the same transaction infrastructure DMG operates in-house.</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);border-top:1px solid var(--color-divider);padding-top:var(--space-3)">
+              <span class="tag tag-outline">Numis Trust</span>
+              <a href="#contact" style="font-size:14px;text-decoration:none;color:var(--color-accent-700)" style-hover="color:var(--color-accent-900)">Contact <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="narrative" aria-labelledby="narr-h" style="background:var(--color-accent-900);color:var(--color-bg);padding:calc(var(--space-8) * 3.6) 0">
+      <div style="max-width:1280px;margin:0 auto;padding:0 var(--space-6)">
+        <p style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:var(--color-accent-300);margin:0 0 var(--space-6)">Why now</p>
+        <h2 id="narr-h" style="font-size:clamp(34px,4.4vw,64px);line-height:1.0;margin:0;max-width:26ch;text-wrap:balance">The next era of infrastructure will be defined by access to power.</h2>
+        <p style="margin:var(--space-8) 0 0;max-width:62ch;font-size:18px;line-height:1.6;color:rgba(242,242,243,0.80);text-wrap:pretty">AI, high-performance computing and Bitcoin increasingly compete for secure, efficient and scalable energy infrastructure. DMG's combination of data-center assets, operational experience and proprietary software places the company inside that competition rather than alongside it.</p>
+
+        <div style="margin-top:calc(var(--space-8) * 2.4);display:grid;grid-template-columns:1.2fr 1fr;gap:var(--space-8);align-items:center" data-cols="asym">
+          <div class="blueprint" style="padding:var(--space-6);background:#141F5C">
+            <i class="corner tl" style="color:rgba(242,242,243,0.5)"></i><i class="corner tr" style="color:rgba(242,242,243,0.5)"></i><i class="corner bl" style="color:rgba(242,242,243,0.5)"></i><i class="corner br" style="color:rgba(242,242,243,0.5)"></i>
+            <svg sc-camel-view-box="0 0 640 340" style="width:100%;height:auto" role="img" aria-label="Diagram: energy, compute and digital assets converge through DMG.">
+              <g fill="none" stroke="rgba(133,147,232,0.22)" stroke-width="1">
+                <circle cx="320" cy="170" r="132"></circle>
+                <circle cx="320" cy="170" r="88"></circle>
+              </g>
+              <g fill="none" stroke="#8593E8" stroke-width="1" stroke-dasharray="5 100">
+                <path d="M96 76 L320 170" style="animation:dmg-flow 9s linear infinite"></path>
+                <path d="M544 76 L320 170" style="animation:dmg-flow 12s linear infinite"></path>
+                <path d="M320 304 L320 170" style="animation:dmg-flow 15s linear infinite"></path>
+              </g>
+              <g fill="none" stroke="#8593E8" stroke-width="1">
+                <rect x="26" y="56" width="140" height="40"></rect>
+                <rect x="474" y="56" width="140" height="40"></rect>
+                <rect x="250" y="284" width="140" height="40"></rect>
+                <rect x="266" y="148" width="108" height="44" fill="#8593E8"></rect>
+              </g>
+              <g font-family="Barlow Condensed" font-size="15" letter-spacing="1.2" fill="#f2f2f3" text-anchor="middle">
+                <text x="96" y="82">ENERGY</text>
+                <text x="544" y="82">COMPUTE</text>
+                <text x="320" y="310">DIGITAL ASSETS</text>
+              </g>
+              <text x="320" y="176" font-family="Barlow Condensed" font-size="17" letter-spacing="2" fill="#0D1745" text-anchor="middle">DMG</text>
+            </svg>
+          </div>
+          <div style="display:grid;gap:var(--space-6)">
+            <div style="border-left:1px solid rgba(133,147,232,0.4);padding-left:var(--space-6)">
+              <h3 style="font-size:22px;margin:0 0 var(--space-2);color:var(--color-accent-300)">Energy</h3>
+              <p style="margin:0;font-size:15px;color:rgba(242,242,243,0.76)">Secured interconnection and cold-climate siting decide how quickly capacity can be delivered at all.</p>
+            </div>
+            <div style="border-left:1px solid rgba(133,147,232,0.4);padding-left:var(--space-6)">
+              <h3 style="font-size:22px;margin:0 0 var(--space-2);color:var(--color-accent-300)">Compute</h3>
+              <p style="margin:0;font-size:15px;color:rgba(242,242,243,0.76)">Density, cooling and uptime determine which workloads a site can actually host — from mining to AI training.</p>
+            </div>
+            <div style="border-left:1px solid rgba(133,147,232,0.4);padding-left:var(--space-6)">
+              <h3 style="font-size:22px;margin:0 0 var(--space-2);color:var(--color-accent-300)">Digital assets</h3>
+              <p style="margin:0;font-size:15px;color:rgba(242,242,243,0.76)">Software and settlement infrastructure turn operated compute into services institutions can use under audit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="investors" aria-labelledby="inv-h" style="padding:calc(var(--space-8) * 3.4) 0;background:var(--color-accent-100);border-bottom:1px solid var(--color-divider)">
+      <div style="max-width:1280px;margin:0 auto;padding:0 var(--space-6)">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:var(--space-8);align-items:end;margin-bottom:calc(var(--space-8) * 1.6)" data-reveal="">
+          <div>
+            <p style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:var(--color-accent-700);margin:0 0 var(--space-4)">Investors</p>
+            <h2 id="inv-h" style="font-size:clamp(30px,3.4vw,46px);line-height:1.04;margin:0;max-width:26ch;text-wrap:balance">Built for long-term participation in the digital infrastructure economy.</h2>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:var(--space-4)">
+            <a href="#investors" class="btn btn-primary blueprint" style="min-height:48px;padding-inline:var(--space-6)">Visit Investor Centre
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            </a>
+            <a href="#investors" class="btn btn-secondary" style="min-height:48px;padding-inline:var(--space-6)">Download Latest Presentation</a>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1.6fr;gap:var(--space-8)" data-cols="asym">
+          <div class="blueprint" style="padding:var(--space-6);background:var(--color-bg)">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <p style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700);margin:0 0 var(--space-4)">Listings</p>
+            <div style="display:flex;justify-content:space-between;padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider)"><span style="font-family:var(--font-heading);font-size:20px">TSXV</span><span style="font-family:var(--font-heading);font-size:20px;color:var(--color-accent-700)">DMGI</span></div>
+            <div style="display:flex;justify-content:space-between;padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider)"><span style="font-family:var(--font-heading);font-size:20px">OTCQB</span><span style="font-family:var(--font-heading);font-size:20px;color:var(--color-accent-700)">DMGGF</span></div>
+            <div style="margin-top:var(--space-6);height:120px;border:1px dashed var(--color-divider);display:grid;place-items:center;text-align:center;padding:var(--space-3)">
+              <span style="font-size:12px;color:var(--color-neutral-700)">Share-price module. Connect an approved market-data provider; no prices are shown until then.</span>
+            </div>
+            <a href="https://www.sedarplus.ca" target="_blank" rel="noopener" style="display:inline-block;margin-top:var(--space-6);font-size:14px;text-decoration:none;color:var(--color-accent-700)" style-hover="color:var(--color-accent-900)">Filings on SEDAR+ <span aria-hidden="true">↗</span></a>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-4);align-content:start">
+            <a href="#investors" class="card blueprint" style="padding:var(--space-6);text-decoration:none;color:inherit;background:var(--color-bg)" style-hover="border-color:var(--color-accent)">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <span style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700)">Financial results</span>
+              <span style="font-family:var(--font-heading);font-size:22px;line-height:1.1">Latest quarterly results</span>
+              <span style="font-size:13px;color:var(--color-neutral-700)">Statements, MD&amp;A and news release. CMS document reference.</span>
+            </a>
+            <a href="#investors" class="card blueprint" style="padding:var(--space-6);text-decoration:none;color:inherit;background:var(--color-bg)" style-hover="border-color:var(--color-accent)">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <span style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700)">Presentation</span>
+              <span style="font-family:var(--font-heading);font-size:22px;line-height:1.1">Investor presentation</span>
+              <span style="font-size:13px;color:var(--color-neutral-700)">Current corporate deck, PDF. CMS document reference.</span>
+            </a>
+            <a href="#investors" class="card blueprint" style="padding:var(--space-6);text-decoration:none;color:inherit;background:var(--color-bg)" style-hover="border-color:var(--color-accent)">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <span style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700)">Operations</span>
+              <span style="font-family:var(--font-heading);font-size:22px;line-height:1.1">Operational update</span>
+              <span style="font-size:13px;color:var(--color-neutral-700)">Monthly production and site progress. CMS news release.</span>
+            </a>
+            <a href="#investors" class="card blueprint" style="padding:var(--space-6);text-decoration:none;color:inherit;background:var(--color-bg)" style-hover="border-color:var(--color-accent)">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <span style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700)">Calendar</span>
+              <span style="font-family:var(--font-heading);font-size:22px;line-height:1.1">Upcoming events</span>
+              <span style="font-size:13px;color:var(--color-neutral-700)">Earnings dates and conferences. CMS event entries.</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="insights" aria-labelledby="ins-h" style="padding:calc(var(--space-8) * 3.4) 0">
+      <div style="max-width:1280px;margin:0 auto;padding:0 var(--space-6)">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:var(--space-8);align-items:end" data-reveal="">
+          <div>
+            <p style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:var(--color-accent-700);margin:0 0 var(--space-4)">DMG Insights</p>
+            <h2 id="ins-h" style="font-size:clamp(32px,3.6vw,50px);line-height:1.02;margin:0;max-width:22ch;text-wrap:balance">Ideas shaping the infrastructure economy.</h2>
+          </div>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:var(--color-neutral-800);max-width:52ch;text-wrap:pretty">Research, engineering perspectives and company insights across AI infrastructure, energy, Bitcoin and institutional digital assets. News releases and regulatory filings live in the Investor Centre.</p>
+        </div>
+
+        <div style="margin-top:calc(var(--space-8) * 1.6);display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;justify-content:space-between;border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider);padding:var(--space-3) 0">
+          <div role="group" aria-label="Filter insights by category" style="display:flex;flex-wrap:wrap;gap:var(--space-2)">
+            <sc-for list="{{ catItems }}" as="c" hint-placeholder-count="7">
+              <button type="button" sc-camel-on-click="{{ c.onClick }}" aria-pressed="{{ c.active }}" style="{{ c.style }}">{{ c.label }}</button>
+            </sc-for>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-3)">
+            <label for="ins-search" style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-neutral-700)">Search</label>
+            <input id="ins-search" class="input" type="search" placeholder="Search insights" value="{{ query }}" sc-camel-on-input="{{ onSearch }}" style="width:220px;min-height:40px;background:transparent">
+          </div>
+        </div>
+
+        <p style="margin:var(--space-4) 0 0;font-size:12px;color:var(--color-neutral-700)">Sample editorial content, shown to demonstrate the layout. Not DMG statements or announcements.</p>
+
+        <sc-if value="{{ showFeatured }}" hint-placeholder-val="{{ true }}">
+          <article class="blueprint" style="margin-top:calc(var(--space-8) * 1.4);display:grid;grid-template-columns:1.25fr 1fr;gap:0" data-cols="asym">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <div class="duotone" style="min-height:400px;border-right:1px solid var(--color-divider)">
+              <image-slot id="dmg-art-featured" shape="rect" placeholder="EDITORIAL — Energy grid. High-voltage transmission towers or a substation bay at long lens, cold light, no people. Distinct from every other article image."></image-slot>
+            </div>
+            <div style="padding:var(--space-8);display:flex;flex-direction:column;gap:var(--space-4)">
+              <div style="display:flex;gap:var(--space-2);align-items:center">
+                <span class="tag tag-accent">Featured</span>
+                <span class="tag tag-outline">AI Infrastructure</span>
+              </div>
+              <h3 style="font-size:clamp(26px,2.6vw,38px);line-height:1.06;margin:0;text-wrap:balance">Power is becoming the defining constraint of AI infrastructure.</h3>
+              <p style="margin:0;font-size:16px;color:var(--color-neutral-800);text-wrap:pretty">Model demand is growing faster than interconnection queues can clear. Where energy is already secured, capacity arrives on a different timeline — and that timeline is becoming the product.</p>
+              <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:center;font-size:12px;color:var(--color-neutral-700);font-family:var(--font-heading);letter-spacing:0.1em;text-transform:uppercase;border-top:1px solid var(--color-divider);padding-top:var(--space-4)">
+                <span>DMG Editorial</span><span aria-hidden="true">/</span><span>14 May 2026</span><span aria-hidden="true">/</span><span>8 min read</span>
+              </div>
+              <a href="#insights" class="btn btn-primary blueprint" style="align-self:start;min-height:46px;padding-inline:var(--space-6)">Read article
+                <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              </a>
+            </div>
+          </article>
+        </sc-if>
+
+        <div style="margin-top:var(--space-8);display:grid;grid-template-columns:repeat(auto-fit,minmax(276px,1fr));gap:var(--space-6)">
+          <sc-for list="{{ cards }}" as="a" hint-placeholder-count="4">
+            <a href="#insights" class="card blueprint" style="padding:0;gap:0;text-decoration:none;color:inherit;overflow:hidden" style-hover="border-color:var(--color-accent)">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <span class="duotone" style="display:block;height:172px;border-bottom:1px solid var(--color-divider)">
+                <image-slot id="{{ a.slot }}" shape="rect" placeholder="{{ a.art }}"></image-slot>
+              </span>
+              <span style="display:flex;flex-direction:column;gap:var(--space-2);padding:var(--space-6);flex:1">
+                <span class="card-kicker">{{ a.cat }}</span>
+                <span style="font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:21px;line-height:1.12">{{ a.title }}</span>
+                <span style="font-size:14px;color:var(--color-neutral-800);flex:1">{{ a.excerpt }}</span>
+                <span style="display:flex;flex-wrap:wrap;gap:var(--space-2);align-items:center;font-family:var(--font-heading);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-700);border-top:1px solid var(--color-divider);padding-top:var(--space-3)">{{ a.author }} <span aria-hidden="true">/</span> {{ a.date }} <span aria-hidden="true">/</span> {{ a.read }}</span>
+              </span>
+            </a>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:var(--space-8) 0 0;font-size:16px;color:var(--color-neutral-800)">No insights match that filter yet. Clear the search or choose another category.</p>
+        </sc-if>
+
+        <div style="margin-top:calc(var(--space-8) * 1.6);display:flex;flex-wrap:wrap;gap:var(--space-6);align-items:center;justify-content:space-between;border-top:1px solid var(--color-divider);padding-top:var(--space-6)">
+          <a href="#insights" class="btn btn-secondary" style="min-height:46px;padding-inline:var(--space-6)">View all insights <span aria-hidden="true">→</span></a>
+          <div style="display:flex;flex-wrap:wrap;gap:var(--space-6);align-items:center;font-size:14px">
+            <a href="#insights" style="text-decoration:none;color:var(--color-accent-700)" style-hover="color:var(--color-accent-900)">Popular this quarter</a>
+            <a href="#insights" style="text-decoration:none;color:var(--color-accent-700)" style-hover="color:var(--color-accent-900)">Series: Power and compute</a>
+            <a href="#insights" style="text-decoration:none;color:var(--color-accent-700)" style-hover="color:var(--color-accent-900)">RSS</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="newsletter" aria-labelledby="nl-h" style="background:var(--color-accent-100);border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider);padding:calc(var(--space-8) * 3) 0">
+      <div style="max-width:1280px;margin:0 auto;padding:0 var(--space-6);display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--space-8) * 2)" data-cols="asym">
+        <div>
+          <p style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:var(--color-accent-700);margin:0 0 var(--space-4)">Subscribe</p>
+          <h2 id="nl-h" style="font-size:clamp(30px,3.2vw,44px);line-height:1.04;margin:0;max-width:22ch;text-wrap:balance">Follow the systems shaping digital infrastructure.</h2>
+          <p style="margin:var(--space-6) 0 0;font-size:17px;color:var(--color-neutral-800);max-width:46ch;text-wrap:pretty">Receive DMG research, company updates and investor announcements directly in your inbox.</p>
+        </div>
+        <div class="blueprint" style="padding:var(--space-8);background:var(--color-bg)">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <sc-if value="{{ subscribed }}" hint-placeholder-val="{{ false }}">
+            <div role="status" style="display:grid;gap:var(--space-3)">
+              <p style="font-family:var(--font-heading);font-size:24px;margin:0">You're on the list.</p>
+              <p style="margin:0;font-size:15px;color:var(--color-neutral-800)">A confirmation email is on its way. You can change your interests from any DMG email.</p>
+              <button type="button" sc-camel-on-click="{{ resetForm }}" class="btn btn-secondary" style="justify-self:start;min-height:44px;padding-inline:var(--space-6)">Subscribe another address</button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ notSubscribed }}" hint-placeholder-val="{{ true }}">
+            <form novalidate="" sc-camel-on-submit="{{ onSubmit }}" style="display:grid;gap:var(--space-6)">
+              <div class="field">
+                <label for="nl-email">Email address</label>
+                <input id="nl-email" class="input" type="email" name="email" sc-camel-auto-complete="email" value="{{ email }}" sc-camel-on-input="{{ onEmail }}" aria-describedby="nl-consent" style="min-height:46px">
+                <sc-if value="{{ emailError }}" hint-placeholder-val="{{ false }}">
+                  <p role="alert" style="margin:var(--space-2) 0 0;font-size:13px;color:var(--color-accent-800)">Enter a valid email address so we can confirm your subscription.</p>
+                </sc-if>
+              </div>
+              <fieldset style="border:0;padding:0;margin:0">
+                <legend style="font-size:12px;color:var(--color-neutral-800);margin-bottom:var(--space-3)">Interests</legend>
+                <div style="display:flex;flex-wrap:wrap;gap:var(--space-4)">
+                  <label class="radio" style="min-height:32px"><input type="checkbox" checked="{{ wantInsights }}" sc-camel-on-change="{{ toggleInsights }}"><span class="dot" style="border-radius:0"></span>DMG Insights</label>
+                  <label class="radio" style="min-height:32px"><input type="checkbox" checked="{{ wantInvestor }}" sc-camel-on-change="{{ toggleInvestor }}"><span class="dot" style="border-radius:0"></span>Investor Updates</label>
+                  <label class="radio" style="min-height:32px"><input type="checkbox" checked="{{ wantNews }}" sc-camel-on-change="{{ toggleNews }}"><span class="dot" style="border-radius:0"></span>Company News</label>
+                </div>
+              </fieldset>
+              <button type="submit" class="btn btn-primary blueprint" style="min-height:48px;justify-self:start;padding-inline:var(--space-8)">Subscribe
+                <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              </button>
+              <p id="nl-consent" style="margin:0;font-size:12px;color:var(--color-neutral-700)">By subscribing you agree to receive email from DMG Blockchain Solutions Inc. You can unsubscribe at any time. See the privacy policy.</p>
+            </form>
+          </sc-if>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="cta-h" style="background:var(--color-accent-900);color:var(--color-bg);padding:calc(var(--space-8) * 4) 0;position:relative;overflow:hidden">
+      <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(rgba(133,147,232,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(133,147,232,0.08) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(circle at 70% 50%,#000,transparent 72%)"></div>
+      <div style="position:relative;max-width:1280px;margin:0 auto;padding:0 var(--space-6);text-align:center">
+        <h2 id="cta-h" style="font-size:clamp(34px,5vw,72px);line-height:1.0;margin:0 auto;max-width:20ch;text-wrap:balance">Building infrastructure for what comes next.</h2>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-4);justify-content:center;margin-top:calc(var(--space-8) * 1.6)">
+          <a href="#positioning" class="btn btn-primary blueprint" style="background:var(--color-accent-500);border-color:var(--color-accent-400);color:#ffffff;min-height:52px;padding-inline:var(--space-8);font-size:15px">Explore DMG
+            <i class="corner tl" style="color:rgba(242,242,243,0.55)"></i><i class="corner tr" style="color:rgba(242,242,243,0.55)"></i><i class="corner bl" style="color:rgba(242,242,243,0.55)"></i><i class="corner br" style="color:rgba(242,242,243,0.55)"></i>
+          </a>
+          <a href="#contact" class="btn btn-secondary" style="border-color:rgba(242,242,243,0.34);color:var(--color-bg);min-height:52px;padding-inline:var(--space-8);font-size:15px">Contact Our Team</a>
+          <a href="#investors" class="btn btn-secondary" style="border-color:rgba(242,242,243,0.34);color:var(--color-bg);min-height:52px;padding-inline:var(--space-8);font-size:15px">Investor Relations</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:#141F5C;color:rgba(242,242,243,0.78);padding:calc(var(--space-8) * 2.4) 0 var(--space-8)">
+    <div style="max-width:1280px;margin:0 auto;padding:0 var(--space-6)">
+      <div style="display:grid;grid-template-columns:1.2fr repeat(5,1fr);gap:var(--space-8)" data-cols="footer">
+        <div>
+          <img src="5b070d9e-9a82-4903-8ece-d2f822c17788" alt="DMG Blockchain Solutions" style="height:24px;width:auto;margin-bottom:var(--space-6)">
+          <p style="margin:0;font-size:13px;max-width:26ch">DMG Blockchain Solutions Inc. Canadian digital infrastructure and blockchain technology.</p>
+          <p style="margin:var(--space-4) 0 0;font-family:var(--font-heading);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-accent-300)">TSXV: DMGI<br>OTCQB: DMGGF</p>
+        </div>
+        <nav aria-labelledby="f-co">
+          <p id="f-co" style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-bg);margin:0 0 var(--space-4)">Company</p>
+          <ul style="list-style:none;margin:0;padding:0;display:grid;gap:var(--space-2)">
+            <li><a href="#positioning" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">About</a></li>
+            <li><a href="#positioning" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Leadership</a></li>
+            <li><a href="#contact" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Careers</a></li>
+            <li><a href="#contact" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Contact</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-in">
+          <p id="f-in" style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-bg);margin:0 0 var(--space-4)">Infrastructure</p>
+          <ul style="list-style:none;margin:0;padding:0;display:grid;gap:var(--space-2)">
+            <li><a href="#spotlight" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Data Centers</a></li>
+            <li><a href="#infrastructure" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">AI and HPC</a></li>
+            <li><a href="#infrastructure" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Bitcoin Mining</a></li>
+            <li><a href="#infrastructure" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Colocation</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-pl">
+          <p id="f-pl" style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-bg);margin:0 0 var(--space-4)">Platforms</p>
+          <ul style="list-style:none;margin:0;padding:0;display:grid;gap:var(--space-2)">
+            <li><a href="#platforms" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Blockseer</a></li>
+            <li><a href="#platforms" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Terra Pool</a></li>
+            <li><a href="#platforms" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Reactor</a></li>
+            <li><a href="#platforms" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Digital Asset Services</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-iv">
+          <p id="f-iv" style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-bg);margin:0 0 var(--space-4)">Investors</p>
+          <ul style="list-style:none;margin:0;padding:0;display:grid;gap:var(--space-2)">
+            <li><a href="#investors" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Overview</a></li>
+            <li><a href="#investors" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Financial Results</a></li>
+            <li><a href="#investors" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Presentations</a></li>
+            <li><a href="#investors" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">News Releases</a></li>
+            <li><a href="https://www.sedarplus.ca" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">SEDAR+</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-rs">
+          <p id="f-rs" style="font-family:var(--font-heading);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-bg);margin:0 0 var(--space-4)">Resources</p>
+          <ul style="list-style:none;margin:0;padding:0;display:grid;gap:var(--space-2)">
+            <li><a href="#insights" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Insights</a></li>
+            <li><a href="#contact" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Media</a></li>
+            <li><a href="#insights" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Bitcoin 101</a></li>
+            <li><a href="https://www.blockseer.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Blockseer Explorer</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div style="margin-top:calc(var(--space-8) * 2);padding-top:var(--space-6);border-top:1px solid rgba(242,242,243,0.14);display:flex;flex-wrap:wrap;gap:var(--space-6);align-items:center;justify-content:space-between;font-size:12px">
+        <p style="margin:0">© 2026 DMG Blockchain Solutions Inc. Incorporated in British Columbia, Canada.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-6)">
+          <a href="#contact" style="color:inherit;text-decoration:none" style-hover="color:#fff">Privacy</a>
+          <a href="#contact" style="color:inherit;text-decoration:none" style-hover="color:#fff">Terms</a>
+          <a href="#contact" style="color:inherit;text-decoration:none" style-hover="color:#fff">Disclaimer</a>
+          <a href="#contact" style="color:inherit;text-decoration:none" style-hover="color:#fff">Modern Slavery Statement</a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" style-hover="color:#fff">LinkedIn</a>
+          <a href="https://x.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" style-hover="color:#fff">X</a>
+        </div>
+      </div>
+      <p style="margin:var(--space-6) 0 0;font-size:11px;color:rgba(242,242,243,0.45);max-width:96ch">Certification references such as SOC 2 Type II publish only where currently held and legally approved. Nothing on this page is an offer to sell securities or a forecast of financial performance.</p>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;showAnnouncementBar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Announcement&quot;},&quot;announcementText&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;DMG reports operational update for the latest quarter&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Announcement&quot;},&quot;secondaryCount&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:4,&quot;min&quot;:2,&quot;max&quot;:6,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Insights&quot;}}">
+const CATS = ['Featured', 'AI Infrastructure', 'Data Centers', 'Bitcoin and Energy', 'Digital Assets', 'Engineering', 'Company'];
+
+const ARTICLES = [
+  {
+    slot: 'dmg-art-1', cat: 'Engineering',
+    title: 'Why liquid cooling matters for high-density compute',
+    excerpt: 'Above roughly 40 kW per rack, air stops being the cheapest way to move heat. What changes in the mechanical design.',
+    author: 'DMG Editorial', date: '2 May 2026', read: '6 min read',
+    art: 'EDITORIAL — Cooling macro. Close detail of manifolds, coolant lines or an immersion tank lid. Shallow depth of field, technical, no branding.'
+  },
+  {
+    slot: 'dmg-art-2', cat: 'Bitcoin and Energy',
+    title: 'How energy markets shape Bitcoin infrastructure economics',
+    excerpt: 'Interruptible load, curtailment and time-of-day pricing decide where mining can operate at all.',
+    author: 'DMG Editorial', date: '24 April 2026', read: '7 min read',
+    art: 'EDITORIAL — Hydro and grid. Penstocks, spillway or a rural transmission corridor in British Columbia. Wide landscape, overcast light.'
+  },
+  {
+    slot: 'dmg-art-3', cat: 'Digital Assets',
+    title: 'Building compliance into digital-asset transaction systems',
+    excerpt: 'Controls designed at the protocol boundary rather than bolted on afterwards behave differently under audit.',
+    author: 'DMG Editorial', date: '11 April 2026', read: '9 min read',
+    art: 'EDITORIAL — Data visualisation. A generated transaction-graph or ledger figure rendered in the DMG line style. Diagram, not photography.'
+  },
+  {
+    slot: 'dmg-art-4', cat: 'Data Centers',
+    title: 'What sovereign AI infrastructure means for Canada',
+    excerpt: 'Domestic compute capacity is becoming a policy question as much as a commercial one.',
+    author: 'DMG Editorial', date: '28 March 2026', read: '8 min read',
+    art: 'EDITORIAL — Topographic. A contour or elevation study of the site region, drawn as a technical map rather than a photograph.'
+  },
+  {
+    slot: 'dmg-art-5', cat: 'Company',
+    title: 'How vertical integration creates operational resilience',
+    excerpt: 'Owning the site, the software and the operating team shortens the distance between a problem and a fix.',
+    author: 'DMG Editorial', date: '17 March 2026', read: '5 min read',
+    art: 'EDITORIAL — Engineering team. Operations staff at work in a control room or on-site, candid, back-of-house. Real DMG people only.'
+  },
+  {
+    slot: 'dmg-art-6', cat: 'AI Infrastructure',
+    title: 'Reading the interconnection queue',
+    excerpt: 'Where a project sits in the queue is the single largest predictor of when it can serve load.',
+    author: 'DMG Editorial', date: '4 March 2026', read: '6 min read',
+    art: 'EDITORIAL — Architecture. Substation steelwork or a switchyard bay shot straight on, symmetrical, hard light.'
+  }
+];
+
+class Component extends DCLogic {
+  state = {
+    menu: null, mobileOpen: false, cat: 'Featured', q: '',
+    email: '', emailError: false, subscribed: false,
+    interests: { insights: true, investor: false, news: false }
+  };
+
+  componentDidMount() {
+    document.addEventListener('keydown', this.onKey);
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) return;
+    const nodes = Array.from(document.querySelectorAll('[data-reveal]'));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        e.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'none';
+        io.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -12% 0px' });
+    nodes.forEach((n) => {
+      if (n.getBoundingClientRect().top < window.innerHeight) return;
+      n.style.opacity = '0';
+      n.style.transform = 'translateY(16px)';
+      io.observe(n);
+    });
+  }
+
+  componentWillUnmount() { document.removeEventListener('keydown', this.onKey); }
+
+  onKey = (e) => {
+    if (e.key !== 'Escape') return;
+    this.setState({ menu: null, mobileOpen: false });
+  };
+
+  set = (menu) => () => this.setState({ menu });
+  toggle = (menu) => () => this.setState((s) => ({ menu: s.menu === menu ? null : menu }));
+
+  renderVals() {
+    const q = this.state.q.trim().toLowerCase();
+    const cat = this.state.cat;
+    const matches = ARTICLES.filter((a) => {
+      const inCat = cat === 'Featured' || a.cat === cat;
+      const inQ = !q || (a.title + ' ' + a.excerpt + ' ' + a.cat).toLowerCase().includes(q);
+      return inCat && inQ;
+    });
+    const showFeatured = cat === 'Featured' && !q;
+    const limit = this.props.secondaryCount ?? 4;
+    const cards = showFeatured ? matches.slice(0, limit) : matches;
+
+    const base = 'font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:8px 14px;min-height:36px;cursor:pointer;border-radius:0;border:1px solid ';
+    const catItems = CATS.map((label) => ({
+      label,
+      active: label === cat,
+      style: label === cat
+        ? base + 'var(--color-accent);background:var(--color-accent);color:var(--color-bg)'
+        : base + 'var(--color-divider);background:transparent;color:var(--color-text)',
+      onClick: () => this.setState({ cat: label })
+    }));
+
+    return {
+      showBar: this.props.showAnnouncementBar ?? true,
+      announcement: this.props.announcementText ?? 'DMG reports operational update for the latest quarter',
+      isCompany: this.state.menu === 'company',
+      isInfra: this.state.menu === 'infra',
+      isPlat: this.state.menu === 'plat',
+      openCompany: this.set('company'), openInfra: this.set('infra'), openPlat: this.set('plat'),
+      toggleCompany: this.toggle('company'), toggleInfra: this.toggle('infra'), togglePlat: this.toggle('plat'),
+      closeMenu: this.set(null),
+      mobileOpen: this.state.mobileOpen,
+      openMobile: () => this.setState({ mobileOpen: true, menu: null }),
+      closeMobile: () => this.setState({ mobileOpen: false }),
+      catItems, cards, showFeatured,
+      noResults: matches.length === 0,
+      query: this.state.q,
+      onSearch: (e) => this.setState({ q: e.target.value }),
+      email: this.state.email,
+      emailError: this.state.emailError,
+      onEmail: (e) => this.setState({ email: e.target.value, emailError: false }),
+      wantInsights: this.state.interests.insights,
+      wantInvestor: this.state.interests.investor,
+      wantNews: this.state.interests.news,
+      toggleInsights: () => this.setState((s) => ({ interests: { ...s.interests, insights: !s.interests.insights } })),
+      toggleInvestor: () => this.setState((s) => ({ interests: { ...s.interests, investor: !s.interests.investor } })),
+      toggleNews: () => this.setState((s) => ({ interests: { ...s.interests, news: !s.interests.news } })),
+      subscribed: this.state.subscribed,
+      notSubscribed: !this.state.subscribed,
+      onSubmit: (e) => {
+        e.preventDefault();
+        const ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(this.state.email.trim());
+        if (!ok) { this.setState({ emailError: true }); return; }
+        this.setState({ subscribed: true });
+      },
+      resetForm: () => this.setState({ subscribed: false, email: '', emailError: false })
+    };
+  }
+}
+
+</script>
+
+
+</body></html>

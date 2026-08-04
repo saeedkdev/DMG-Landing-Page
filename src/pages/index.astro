@@ -1,0 +1,80 @@
+---
+import bundledTemplate from '../source/template.html?raw';
+import assetIndex from '../source/asset-index.json';
+
+const assetBase = '/assets/source';
+const assetUrls = Object.fromEntries(
+  Object.entries(assetIndex).map(([id, asset]) => [
+    id,
+    `${assetBase}/${asset.filename}`,
+  ]),
+);
+
+const start = bundledTemplate.indexOf('<x-dc>');
+const end = bundledTemplate.lastIndexOf('</body>');
+
+if (start === -1 || end === -1) {
+  throw new Error('The extracted DMG source template is incomplete.');
+}
+
+const pageMarkup = Object.entries(assetUrls)
+  .reduce(
+    (markup, [id, url]) => markup.replaceAll(id, url),
+    bundledTemplate.slice(start, end),
+  )
+  // The export binds focus and click to competing menu state updates. Keeping
+  // click + pointer hover preserves both keyboard and mouse navigation.
+  .replaceAll(' sc-camel-on-focus="{{ openCompany }}"', '')
+  .replaceAll(' sc-camel-on-focus="{{ openInfra }}"', '')
+  .replaceAll(' sc-camel-on-focus="{{ openPlat }}"', '');
+
+const title = 'DMG Blockchain Solutions | Canadian Digital Infrastructure';
+const description =
+  'DMG develops and operates energy-efficient data centers and vertically integrated software platforms for AI, Bitcoin, and institutional digital finance.';
+---
+
+<!doctype html>
+<html lang="en" data-om-exporting>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0D1745" />
+    <meta name="color-scheme" content="light" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={assetUrls['3406ad21-4a0f-4b01-b494-27f1ea20d112']} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={assetUrls['3406ad21-4a0f-4b01-b494-27f1ea20d112']} />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href={assetUrls['5b070d9e-9a82-4903-8ece-d2f822c17788']}
+    />
+    <title>{title}</title>
+
+    <script is:inline>
+      window.__resources = {
+        slotState: '/assets/source/c7302be3-523b-45f7-a3ca-81627e45a767.json',
+        'https://unpkg.com/react@18.3.1/umd/react.production.min.js':
+          '/assets/source/8f62930f-c2c5-4dfc-841c-9f6f8355957c.js',
+        'https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js':
+          '/assets/source/81b625df-4bf9-4121-868f-209d2da1a7ec.js',
+      };
+    </script>
+    <script
+      is:inline
+      defer
+      src="/assets/source/dfa60081-34f3-42e1-b384-c9a6a0c32f36.js"
+    ></script>
+  </head>
+  <body>
+    <Fragment set:html={pageMarkup} />
+  </body>
+</html>
