@@ -9,6 +9,7 @@ and interaction runtime are unpacked into normal project assets.
 
 ```sh
 pnpm install
+cp .env.example .env
 pnpm dev
 ```
 
@@ -23,6 +24,20 @@ pnpm preview
 
 The static site is emitted to `dist/`.
 
+## Beehiiv posts
+
+The insights section is populated from the Beehiiv publication during Astro's
+server-side build. Add these values to `.env` locally and to the environment of
+the deployment service:
+
+```sh
+BEEHIIV_API_KEY=your_beehiiv_api_key
+BEEHIIV_PUBLICATION_ID=pub_your_publication_id
+```
+
+Neither value is exposed to browser JavaScript. Rebuild or redeploy the site to
+publish newly confirmed Beehiiv posts.
+
 ## Source structure
 
 - `src/pages/index.astro` provides document metadata and renders the landing page.
@@ -34,7 +49,5 @@ The static site is emitted to `dist/`.
 
 ## Content notes
 
-The insights area includes sample editorial content and deliberate artwork
-placeholders exactly as supplied in the source design. Investor documents,
-market data, CMS links, privacy/terms pages, and newsletter delivery still need
-their production destinations or services before launch.
+Investor documents, market data, CMS links, privacy/terms pages, and newsletter
+delivery still need their production destinations or services before launch.

@@ -1,6 +1,8 @@
 ---
 import bundledTemplate from '../source/template.html?raw';
 import assetIndex from '../source/asset-index.json';
+import { getBeehiivPosts } from '../lib/beehiiv';
+import { prepareLandingTemplate } from '../lib/landing-template';
 
 const assetBase = '/assets/source';
 const assetUrls = Object.fromEntries(
@@ -10,23 +12,12 @@ const assetUrls = Object.fromEntries(
   ]),
 );
 
-const start = bundledTemplate.indexOf('<x-dc>');
-const end = bundledTemplate.lastIndexOf('</body>');
-
-if (start === -1 || end === -1) {
-  throw new Error('The extracted DMG source template is incomplete.');
-}
-
-const pageMarkup = Object.entries(assetUrls)
-  .reduce(
-    (markup, [id, url]) => markup.replaceAll(id, url),
-    bundledTemplate.slice(start, end),
-  )
-  // The export binds focus and click to competing menu state updates. Keeping
-  // click + pointer hover preserves both keyboard and mouse navigation.
-  .replaceAll(' sc-camel-on-focus="{{ openCompany }}"', '')
-  .replaceAll(' sc-camel-on-focus="{{ openInfra }}"', '')
-  .replaceAll(' sc-camel-on-focus="{{ openPlat }}"', '');
+const beehiivPosts = await getBeehiivPosts();
+const pageMarkup = prepareLandingTemplate({
+  template: bundledTemplate,
+  assetUrls,
+  posts: beehiivPosts,
+});
 
 const title = 'DMG Blockchain Solutions | Canadian Digital Infrastructure';
 const description =
