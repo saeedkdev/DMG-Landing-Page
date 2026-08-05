@@ -21,16 +21,17 @@ Copy `.env.example` to `.env` and supply the Beehiiv and Sanity values. Secrets
 are consumed only by the Astro server and migration script and must also be set
 in the production host.
 
-## Production build and server
+## Production build
 
 ```sh
 pnpm build
-node dist/server/entry.mjs
 ```
 
-The site uses Astro's standalone Node adapter because newsletter subscriptions
-must be proxied through a server-side endpoint. Deploy it to a Node-compatible
-host, or change the adapter to the target host's Astro adapter.
+The site uses Astro's official Vercel adapter so newsletter subscriptions are
+served by a Vercel function while content pages are prerendered. In Vercel, use
+the Astro framework preset, `pnpm build` as the build command, and leave the
+Output Directory setting empty so the adapter's Build Output API artifacts are
+deployed unchanged.
 
 ## Beehiiv posts
 

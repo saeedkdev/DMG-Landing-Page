@@ -20,7 +20,7 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@astrojs/node": "^11.0.3",
+    "@astrojs/vercel": "^11.0.4",
     "@sanity/client": "^7.26.0",
     "@sanity/vision": "^6.8.0",
     "parse5": "^8.0.1",

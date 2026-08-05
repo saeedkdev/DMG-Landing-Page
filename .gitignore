@@ -4,6 +4,7 @@ node_modules/
 # Astro build output and generated metadata
 dist/
 .astro/
+.vercel/
 
 # environment files
 .env
