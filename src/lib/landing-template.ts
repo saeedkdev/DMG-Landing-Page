@@ -175,6 +175,39 @@ export function prepareLandingTemplate({
             </a>`;
   markup = replaceRequired(markup, infrastructureButton, '');
 
+  markup = replaceRequired(
+    markup,
+    '<a href="#spotlight" class="btn btn-secondary" style="min-height:46px;padding-inline:var(--space-6)">Explore Infrastructure <span aria-hidden="true">→</span></a>',
+    '<a href="/ai-transition" class="btn btn-secondary" style="min-height:46px;padding-inline:var(--space-6)">Christina Lake AI update <span aria-hidden="true">→</span></a>',
+  );
+
+  const resourcesInsightsLink = `            <li><a href="/insights" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Insights</a></li>`;
+  markup = replaceRequired(
+    markup,
+    resourcesInsightsLink,
+    `            <li style="margin-bottom:var(--space-3);padding:var(--space-3);border:1px solid rgba(180,191,247,0.28);background:rgba(13,23,69,0.32)">
+              <span style="display:block;margin-bottom:4px;color:var(--color-accent-300);font-family:var(--font-heading);font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase">Featured resource</span>
+              <a href="/ai-transition" style="color:var(--color-bg);text-decoration:none;font-family:var(--font-heading);font-size:14px;font-weight:600" style-hover="color:var(--color-accent-300)">Christina Lake AI Update <span aria-hidden="true">→</span></a>
+            </li>
+${resourcesInsightsLink}`,
+  );
+
+  markup = replaceRequired(
+    markup,
+    `            <li><a href="https://www.dmgblockchain.com/bitcoin101" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Bitcoin 101</a></li>`,
+    '',
+  );
+  markup = replaceRequired(
+    markup,
+    `            <li><a href="https://www.blockseer.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Blockseer Explorer</a></li>`,
+    '',
+  );
+  markup = replaceRequired(
+    markup,
+    `            <li><a href="#platforms" style="color:inherit;text-decoration:none;font-size:13px" style-hover="color:#fff">Blockseer</a></li>`,
+    '',
+  );
+
   markup = markup
     .replace('href="#contact" style="font-size:14px;text-decoration:none;color:var(--color-accent-700)" style-hover="color:var(--color-accent-900)">Learn more', `href="${settings.terraPoolUrl}" target="_blank" rel="noopener noreferrer" style="font-size:14px;text-decoration:none;color:var(--color-accent-700)" style-hover="color:var(--color-accent-900)">Learn more`)
     .replace('href="#contact" style="font-size:14px;text-decoration:none;color:var(--color-accent-700)" style-hover="color:var(--color-accent-900)">Learn more', `href="${settings.reactorUrl}" target="_blank" rel="noopener noreferrer" style="font-size:14px;text-decoration:none;color:var(--color-accent-700)" style-hover="color:var(--color-accent-900)">Learn more`)

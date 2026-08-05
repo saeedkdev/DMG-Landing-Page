@@ -1,0 +1,186 @@
+---
+import PageHero from '../components/PageHero.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+export const prerender = true;
+---
+
+<SiteLayout
+  title="DMG's Potential AI Transition in Christina Lake"
+  description="Information for the Christina Lake community about DMG's potential transition to AI computing, including water, land, power, safety, and local economic impacts."
+  canonicalPath="/ai-transition"
+  current="infrastructure"
+>
+  <PageHero
+    eyebrow="Christina Lake community update"
+    title="Potential transition to focus on AI in Christina Lake"
+    description="Clear, easy-to-understand information about what a potential conversion of DMG's existing Christina Lake Data Center could mean for the community."
+  />
+
+  <nav class="ai-subnav" aria-label="On this page">
+    <div class="shell ai-subnav__inner">
+      <span>On this page</span>
+      <a href="#water">Water</a>
+      <a href="#footprint">Footprint</a>
+      <a href="#power">Power and safety</a>
+      <a href="#economy">Local economy</a>
+    </div>
+  </nav>
+
+  <section class="ai-community-section" aria-labelledby="neighbours-title">
+    <div class="shell ai-copy-grid">
+      <div class="ai-copy">
+        <p class="eyebrow">A note to our neighbours</p>
+        <h2 id="neighbours-title">Upgrading an existing facility for its next chapter.</h2>
+        <p>DMG Blockchain Solutions has proudly called Christina Lake home since we began operations on our site in 2018. As we weigh the pros and cons about converting our existing Christina Lake Data Center to support advanced artificial intelligence (AI) computing, we are providing clear, easy-to-understand information about what this means for our community.</p>
+        <p>This next chapter is not a new development. We are upgrading the technology at our facility in a way that limits our direct environmental impact while creating permanent, higher-paying technical jobs and more tax revenue right here in the Boundary region.</p>
+      </div>
+
+      <aside class="ai-fact-panel" aria-label="Project at a glance">
+        <p class="eyebrow">At a glance</p>
+        <dl>
+          <div><dt>Site</dt><dd>Existing Christina Lake industrial facility</dd></div>
+          <div><dt>Approach</dt><dd>Retrofit the existing main building</dd></div>
+          <div><dt>Cooling</dt><dd>Closed-loop, direct liquid cooling</dd></div>
+          <div><dt>Power</dt><dd>Direct high-voltage transmission connection</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section id="water" class="ai-community-section ai-community-section--surface" aria-labelledby="water-title">
+    <div class="shell">
+      <div class="ai-section-heading">
+        <p class="eyebrow">01 / Water</p>
+        <h2 id="water-title">Protecting our water resources.</h2>
+      </div>
+
+      <div class="ai-copy ai-copy--wide">
+        <p>Our current water use remains well within our existing water usage licence and is the equivalent to approximately 15-18 average households annual usage.</p>
+        <p><strong>If our planned transition to AI occurs, our water consumption would decrease.</strong> Our new AI computing infrastructure would utilize a state-of-the-art closed-loop cooling system that uses a water/propylene-glycol mix that will be shipped directly to our facility. This technology is approximately 80% more water efficient than traditional cooling methods for AI data centres.</p>
+        <p class="ai-emphasis">We do not draw or return water from Christina Lake or fish-bearing streams.</p>
+      </div>
+
+      <figure class="ai-figure">
+        <img
+          src="/assets/ai-transition/water-cooling.jpg"
+          alt="Comparison of evaporative cooling, which consumes community water, with closed-loop AI cooling, where coolant is filled once, sealed, and recirculated with zero litres of water used for cooling."
+          width="1365"
+          height="768"
+          loading="lazy"
+        />
+        <figcaption>
+          <span>Closed-loop cooling seals and recirculates coolant instead of continually topping up water.</span>
+          <a href="/assets/ai-transition/water-cooling.jpg" target="_blank" rel="noopener noreferrer">View full size ↗</a>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="footprint" class="ai-community-section" aria-labelledby="footprint-title">
+    <div class="shell ai-media-grid">
+      <figure class="ai-figure ai-figure--flush">
+        <img
+          src="/assets/ai-transition/land-footprint.jpg"
+          alt="Comparison between older horizontal data centre expansion over hundreds of acres and newer dense AI infrastructure using tens of acres, reducing environmental displacement."
+          width="1256"
+          height="832"
+          loading="lazy"
+        />
+        <figcaption>
+          <span>Dense AI infrastructure can concentrate computing capacity within a much smaller footprint.</span>
+          <a href="/assets/ai-transition/land-footprint.jpg" target="_blank" rel="noopener noreferrer">View full size ↗</a>
+        </figcaption>
+      </figure>
+
+      <div class="ai-copy">
+        <p class="eyebrow">02 / Footprint</p>
+        <h2 id="footprint-title">Maintaining our existing footprint.</h2>
+        <p>We are planning to retrofit the existing main building on our industrial site. Currently, there is no new land acquisition associated with our planned pivot to AI infrastructure.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="power" class="ai-community-section ai-community-section--navy" aria-labelledby="power-title">
+    <div class="shell">
+      <div class="ai-section-heading">
+        <p class="eyebrow">03 / Power</p>
+        <h2 id="power-title">Using power responsibly and keeping rates stable.</h2>
+      </div>
+
+      <div class="ai-copy ai-copy--wide">
+        <p>We are powered by our utility's high voltage transmission line, whose energy sources are nearly 100% hydroelectric, which means that our facility currently operates virtually carbon free.</p>
+        <p>Additionally, as we have already started moving some of our current operations to closed-loop direct liquid cooling, we are already seeing improvements in our power efficiency. DMG received an incentive grant to help with this transition.</p>
+        <p>We have a substation on our site that draws energy directly from the grid, meaning we do not affect the local community's supply of energy. In fact, our steady, predictable demand has helped keep utility rates stable for everyone in the community.</p>
+      </div>
+
+      <figure class="ai-figure ai-figure--dark">
+        <img
+          src="/assets/ai-transition/power-grid.jpg"
+          alt="Comparison between older local distribution-grid data centres and a newer direct connection to the regional high-voltage transmission grid, designed to avoid drawing from local town grid capacity."
+          width="1248"
+          height="848"
+          loading="lazy"
+        />
+        <figcaption>
+          <span>A dedicated regional transmission connection separates the facility from local distribution-grid capacity.</span>
+          <a href="/assets/ai-transition/power-grid.jpg" target="_blank" rel="noopener noreferrer">View full size ↗</a>
+        </figcaption>
+      </figure>
+
+      <div class="ai-safety-grid">
+        <article class="ai-safety-card">
+          <p class="eyebrow">Noise</p>
+          <h3>A quieter operation.</h3>
+          <p>Our advanced cooling system is expected to be quieter than our current operations, which should reduce noise in the immediate area.</p>
+        </article>
+
+        <article class="ai-safety-card">
+          <p class="eyebrow">Safety</p>
+          <h3>Safe, standard electrical infrastructure.</h3>
+          <p>AI data centres are essentially large collections of standard computers. They do not use, process, or emit any harmful ionizing radiation.</p>
+          <p>Our facility operates using standard electrical components that are fully certified to strict Canadian safety standards. These components - like computers, transformers, and power distribution equipment - produce the same low-level electromagnetic fields (EMF) found in everyday municipal infrastructure, and operate well within Health Canada's safety guidelines.</p>
+          <p>With respect to AI servers, electromagnetic field strengths drop rapidly with distance from their source, often returning to normal background levels just a few feet away from the racks. The primary concern with EMFs is usually Electromagnetic Interference (EMI), which can disrupt sensitive electronics gear within the facility but would not result in human health risks.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="economy" class="ai-community-section" aria-labelledby="economy-title">
+    <div class="shell">
+      <div class="ai-section-heading">
+        <p class="eyebrow">04 / Local economy</p>
+        <h2 id="economy-title">Supporting the local economy.</h2>
+      </div>
+
+      <div class="ai-copy ai-copy--wide">
+        <p>Our planned conversion would bring immediate economic opportunity to the Boundary region. We plan to partner with local construction and electrical contractors during the build. Once operational, the project is expected to expand our on-site team to include new permanent, high-paying technical jobs.</p>
+      </div>
+
+      <figure class="ai-figure">
+        <img
+          src="/assets/ai-transition/local-economy.jpg"
+          alt="Four ways AI infrastructure can support the local economy: work for local trades and contractors during construction, permanent technical jobs, tax revenue and local supplier activity, and community support."
+          width="1358"
+          height="768"
+          loading="lazy"
+        />
+        <figcaption>
+          <span>Planned benefits include local contracting, permanent technical employment, tax revenue, and community support.</span>
+          <a href="/assets/ai-transition/local-economy.jpg" target="_blank" rel="noopener noreferrer">View full size ↗</a>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="ai-contact" aria-labelledby="questions-title">
+    <div class="shell ai-contact__inner">
+      <div>
+        <p class="eyebrow">Community questions</p>
+        <h2 id="questions-title">If you have questions, let's talk.</h2>
+        <p>We know a project of this size raises questions, and we welcome the opportunity to engage with you.</p>
+      </div>
+      <a class="blueprint-button" href="mailto:info@dmgblockchain.com">Email info@dmgblockchain.com</a>
+    </div>
+  </section>
+</SiteLayout>
