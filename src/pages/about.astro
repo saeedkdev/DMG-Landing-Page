@@ -5,6 +5,7 @@ import { getAboutPage } from '../lib/sanity';
 
 export const prerender = true;
 const page = await getAboutPage();
+const initials = (name: string) => name.split(/\s+/).map((part) => part[0]).join('').slice(0, 2).toUpperCase();
 ---
 
 <SiteLayout title="About DMG | DMG Blockchain Solutions" description={page.intro} canonicalPath="/about" current="about">
@@ -34,6 +35,58 @@ const page = await getAboutPage();
     <div class="shell">
       <div class="section-heading"><h2 id="milestones-title">{page.milestonesTitle}</h2></div>
       <figure><img src={page.milestonesImageUrl || '/assets/about/milestone-desktop.avif'} alt="Timeline of DMG Blockchain Solutions milestones" /></figure>
+    </div>
+  </section>
+
+  <section id="leadership" class="leadership-section" aria-labelledby="management-title">
+    <div class="shell">
+      <div class="leadership-intro">
+        <p class="eyebrow">Our people</p>
+        <h2 id="management-title">{page.managementTitle}</h2>
+        <p>Experienced operators building DMG’s infrastructure, software and digital-asset businesses.</p>
+      </div>
+
+      <div class="people-grid">
+        {page.managementTeam.map((person) => (
+          <article class="person-card">
+            <div class:list={["person-card__portrait", { "person-card__portrait--photo": person.photoUrl }]}>
+              {person.photoUrl ? <img src={person.photoUrl} alt="" /> : <span aria-hidden="true">{initials(person.name)}</span>}
+            </div>
+            <div class="person-card__copy">
+              <h3>{person.name}</h3>
+              <p>{person.role}</p>
+              {person.linkedinUrl && (
+                <a href={person.linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label={`${person.name} on LinkedIn`}>
+                  LinkedIn <span aria-hidden="true">↗</span>
+                </a>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="board-heading">
+        <p class="eyebrow">Governance</p>
+        <h2>{page.boardTitle}</h2>
+      </div>
+      <div class="people-grid people-grid--board">
+        {page.boardMembers.map((person) => (
+          <article class="person-card person-card--compact">
+            <div class:list={["person-card__portrait", { "person-card__portrait--photo": person.photoUrl }]}>
+              {person.photoUrl ? <img src={person.photoUrl} alt="" /> : <span aria-hidden="true">{initials(person.name)}</span>}
+            </div>
+            <div class="person-card__copy">
+              <h3>{person.name}</h3>
+              <p>{person.role}</p>
+              {person.linkedinUrl && (
+                <a href={person.linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label={`${person.name} on LinkedIn`}>
+                  LinkedIn <span aria-hidden="true">↗</span>
+                </a>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 

@@ -14,7 +14,53 @@
     "coreDescription": "Our Core strategy drives revenue from Bitcoin mining, AI compute and colocation services.",
     "corePlusTitle": "Software and Services",
     "corePlusDescription": "Our Core+ strategy drives revenue from DMG’s carbon-neutral Bitcoin ecosystem, digital-asset custody services, Terra Pool and other Blockseer-enabled products and services.",
-    "milestonesTitle": "DMG milestones"
+    "milestonesTitle": "DMG milestones",
+    "managementTitle": "Management team",
+    "managementTeam": [
+      {
+        "name": "Sheldon Bennett",
+        "role": "Chief Executive Officer, Founder & Director",
+        "linkedinUrl": "https://ca.linkedin.com/in/sheldon-bennett-mba-cfe-04164a2"
+      },
+      {
+        "name": "Adrian Glover",
+        "role": "Chief Technology Officer",
+        "linkedinUrl": "https://www.linkedin.com/in/adriancglover"
+      },
+      {
+        "name": "Steven Eliscu",
+        "role": "Chief Operating Officer & Corporate Secretary",
+        "linkedinUrl": "https://www.linkedin.com/in/steveneliscu"
+      },
+      {
+        "name": "Heather Sim",
+        "role": "Chief Financial Officer & Director",
+        "linkedinUrl": "https://ca.linkedin.com/in/heatheresim"
+      }
+    ],
+    "boardTitle": "Board of directors",
+    "boardMembers": [
+      {
+        "name": "Sheldon Bennett",
+        "role": "Chief Executive Officer, Founder & Director",
+        "linkedinUrl": "https://ca.linkedin.com/in/sheldon-bennett-mba-cfe-04164a2"
+      },
+      {
+        "name": "Heather Sim",
+        "role": "Chief Financial Officer & Director",
+        "linkedinUrl": "https://ca.linkedin.com/in/heatheresim"
+      },
+      {
+        "name": "John Place",
+        "role": "Independent Director",
+        "linkedinUrl": "https://ca.linkedin.com/in/john-place-9030907"
+      },
+      {
+        "name": "J.D. Abouchar",
+        "role": "Independent Director",
+        "linkedinUrl": "https://www.linkedin.com/in/john-d-jd-abouchar-14b81b5"
+      }
+    ]
   },
   "contact": {
     "title": "Let’s build what comes next.",

@@ -21,6 +21,17 @@ export interface AboutPageContent {
   coreImageUrl?: string;
   corePlusImageUrl?: string;
   milestonesImageUrl?: string;
+  managementTitle: string;
+  managementTeam: TeamMember[];
+  boardTitle: string;
+  boardMembers: TeamMember[];
+}
+
+export interface TeamMember {
+  name: string;
+  role: string;
+  linkedinUrl?: string;
+  photoUrl?: string;
 }
 
 export interface ContactPageContent {
@@ -106,11 +117,16 @@ export function getSiteSettings() {
 
 export async function getAboutPage(): Promise<AboutPageContent> {
   const content = await safeFetch<Partial<AboutPageContent>>(
-    `*[_type == "aboutPage"][0]{eyebrow,title,intro,coreTitle,coreDescription,corePlusTitle,corePlusDescription,milestonesTitle,"coreImageUrl":coreImage.asset->url,"corePlusImageUrl":corePlusImage.asset->url,"milestonesImageUrl":milestonesImage.asset->url}`,
+    `*[_type == "aboutPage"][0]{eyebrow,title,intro,coreTitle,coreDescription,corePlusTitle,corePlusDescription,milestonesTitle,"coreImageUrl":coreImage.asset->url,"corePlusImageUrl":corePlusImage.asset->url,"milestonesImageUrl":milestonesImage.asset->url,managementTitle,managementTeam[]{name,role,linkedinUrl,"photoUrl":photo.asset->url},boardTitle,boardMembers[]{name,role,linkedinUrl,"photoUrl":photo.asset->url}}`,
     {},
     {},
   );
-  return { ...defaults.about, ...content };
+  return {
+    ...defaults.about,
+    ...content,
+    managementTeam: content.managementTeam?.length ? content.managementTeam : defaults.about.managementTeam,
+    boardMembers: content.boardMembers?.length ? content.boardMembers : defaults.about.boardMembers,
+  };
 }
 
 export async function getContactPage(): Promise<ContactPageContent> {

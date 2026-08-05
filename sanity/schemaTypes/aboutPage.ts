@@ -16,5 +16,39 @@ export const aboutPage = defineType({
     defineField({ name: 'corePlusImage', title: 'Core+ image', type: 'image', options: { hotspot: true } }),
     defineField({ name: 'milestonesTitle', title: 'Milestones title', type: 'string' }),
     defineField({ name: 'milestonesImage', title: 'Milestones image', type: 'image', options: { hotspot: true } }),
+    defineField({ name: 'managementTitle', title: 'Management section title', type: 'string' }),
+    defineField({
+      name: 'managementTeam',
+      title: 'Management team',
+      type: 'array',
+      of: [{
+        type: 'object',
+        name: 'teamMember',
+        fields: [
+          defineField({ name: 'name', title: 'Name', type: 'string', validation: (rule) => rule.required() }),
+          defineField({ name: 'role', title: 'Role', type: 'string', validation: (rule) => rule.required() }),
+          defineField({ name: 'linkedinUrl', title: 'LinkedIn URL', type: 'url' }),
+          defineField({ name: 'photo', title: 'Photo', type: 'image', options: { hotspot: true } }),
+        ],
+        preview: { select: { title: 'name', subtitle: 'role', media: 'photo' } },
+      }],
+    }),
+    defineField({ name: 'boardTitle', title: 'Board section title', type: 'string' }),
+    defineField({
+      name: 'boardMembers',
+      title: 'Board of directors',
+      type: 'array',
+      of: [{
+        type: 'object',
+        name: 'boardMember',
+        fields: [
+          defineField({ name: 'name', title: 'Name', type: 'string', validation: (rule) => rule.required() }),
+          defineField({ name: 'role', title: 'Role', type: 'string', validation: (rule) => rule.required() }),
+          defineField({ name: 'linkedinUrl', title: 'LinkedIn URL', type: 'url' }),
+          defineField({ name: 'photo', title: 'Photo', type: 'image', options: { hotspot: true } }),
+        ],
+        preview: { select: { title: 'name', subtitle: 'role', media: 'photo' } },
+      }],
+    }),
   ],
 });
