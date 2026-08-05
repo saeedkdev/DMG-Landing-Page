@@ -38,11 +38,9 @@ const absoluteSocialImage = new URL(socialImage, Astro.site ?? Astro.url.origin)
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={absoluteSocialImage} />
 
-    <link
-      rel="icon"
-      type="image/png"
-      href="/assets/source/5b070d9e-9a82-4903-8ece-d2f822c17788.png"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="200x200" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <slot name="head" />
     <title>{title}</title>
   </head>
