@@ -495,10 +495,10 @@ textarea.input { min-height: 90px; resize: vertical; }
       </div>
     </sc-if>
 
-    <header style="background:var(--color-accent-900);color:var(--color-bg);border-bottom:1px solid rgba(242,242,243,0.12)" sc-camel-on-mouse-leave="{{ closeMenu }}">
+    <header style="position:relative;background:var(--color-accent-900);color:var(--color-bg);border-bottom:1px solid rgba(242,242,243,0.12)" sc-camel-on-mouse-leave="{{ closeMenu }}">
       <div style="max-width:1280px;margin:0 auto;padding:0 var(--space-6);height:68px;display:flex;align-items:center;gap:var(--space-8)">
         <a href="#main" aria-label="DMG Blockchain Solutions — home" style="display:flex;align-items:center;margin-right:auto">
-          <img src="5b070d9e-9a82-4903-8ece-d2f822c17788" alt="DMG Blockchain Solutions" style="height:26px;width:auto">
+          <img src="5b070d9e-9a82-4903-8ece-d2f822c17788" alt="DMG Blockchain Solutions" style="height:32px;width:auto">
         </a>
 
         <nav aria-label="Primary" style="display:none;align-items:center;gap:var(--space-6)" data-desk="nav">
@@ -525,7 +525,7 @@ textarea.input { min-height: 90px; resize: vertical; }
       </div>
 
       <sc-if value="{{ isCompany }}" hint-placeholder-val="{{ false }}">
-        <div id="mm-company" style="border-top:1px solid rgba(242,242,243,0.12);background:#141F5C;animation:dmg-rise 0.22s ease both">
+        <div id="mm-company" style="position:absolute;top:100%;right:0;left:0;z-index:20;border-top:1px solid rgba(242,242,243,0.12);background:#141F5C;box-shadow:0 22px 40px rgba(5,11,43,0.28);animation:dmg-rise 0.22s ease both">
           <div style="max-width:1280px;margin:0 auto;padding:var(--space-8) var(--space-6);display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:var(--space-8)">
             <div>
               <p style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-300);margin:0 0 var(--space-3)">Company</p>
@@ -544,7 +544,7 @@ textarea.input { min-height: 90px; resize: vertical; }
       </sc-if>
 
       <sc-if value="{{ isInfra }}" hint-placeholder-val="{{ false }}">
-        <div id="mm-infra" style="border-top:1px solid rgba(242,242,243,0.12);background:#141F5C;animation:dmg-rise 0.22s ease both">
+        <div id="mm-infra" style="position:absolute;top:100%;right:0;left:0;z-index:20;border-top:1px solid rgba(242,242,243,0.12);background:#141F5C;box-shadow:0 22px 40px rgba(5,11,43,0.28);animation:dmg-rise 0.22s ease both">
           <div style="max-width:1280px;margin:0 auto;padding:var(--space-8) var(--space-6);display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:var(--space-8)">
             <div>
               <p style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-300);margin:0 0 var(--space-3)">Infrastructure</p>
@@ -564,7 +564,7 @@ textarea.input { min-height: 90px; resize: vertical; }
       </sc-if>
 
       <sc-if value="{{ isPlat }}" hint-placeholder-val="{{ false }}">
-        <div id="mm-plat" style="border-top:1px solid rgba(242,242,243,0.12);background:#141F5C;animation:dmg-rise 0.22s ease both">
+        <div id="mm-plat" style="position:absolute;top:100%;right:0;left:0;z-index:20;border-top:1px solid rgba(242,242,243,0.12);background:#141F5C;box-shadow:0 22px 40px rgba(5,11,43,0.28);animation:dmg-rise 0.22s ease both">
           <div style="max-width:1280px;margin:0 auto;padding:var(--space-8) var(--space-6);display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:var(--space-8)">
             <div>
               <p style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-300);margin:0 0 var(--space-3)">Platforms</p>
@@ -587,7 +587,7 @@ textarea.input { min-height: 90px; resize: vertical; }
   <sc-if value="{{ mobileOpen }}" hint-placeholder-val="{{ false }}">
     <div role="dialog" aria-modal="true" aria-label="Site menu" style="position:fixed;inset:0;z-index:150;background:var(--color-accent-900);color:var(--color-bg);overflow-y:auto;animation:dmg-rise 0.2s ease both">
       <div style="display:flex;align-items:center;padding:var(--space-4) var(--space-6);border-bottom:1px solid rgba(242,242,243,0.12)">
-        <img src="5b070d9e-9a82-4903-8ece-d2f822c17788" alt="DMG Blockchain Solutions" style="height:24px;width:auto;margin-right:auto">
+        <img src="5b070d9e-9a82-4903-8ece-d2f822c17788" alt="DMG Blockchain Solutions" style="height:30px;width:auto;margin-right:auto">
         <button type="button" aria-label="Close menu" sc-camel-on-click="{{ closeMobile }}" style="background:none;border:1px solid rgba(242,242,243,0.24);color:inherit;width:44px;height:44px;font-size:20px;line-height:1;cursor:pointer">×</button>
       </div>
       <div style="padding:var(--space-6) var(--space-6) calc(var(--space-8) * 2)">
